@@ -1,6 +1,7 @@
 'use strict';
 
 const chai = require('chai');
+const two = require('../src');
 
 const expect = chai.expect;
 
@@ -10,7 +11,7 @@ describe('Test demo', () => {
 
     it('simple', async () => {
         console.log('packages/two/tests/test-demo.js running');
-        expect(true).is.true;
+        expect(two()).equals('two');
     });
 
 });

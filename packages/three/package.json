@@ -1,7 +1,7 @@
 {
-  "name": "@pfapi/cicd-test-one",
+  "name": "@pfapi/cicd-test-three",
   "version": "1.0.1",
-  "description": "ci/cd test one",
+  "description": "ci/cd test three",
   "main": "src/index.js",
   "bugs": {
     "url": "https://github.com/pfapi/cicd-test/issues"

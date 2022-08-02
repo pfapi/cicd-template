@@ -1,0 +1,43 @@
+name: e2e tests
+on:
+  pull_request:
+    branches:
+      - development
+    types: 
+      - opened
+      - synchronize
+    paths-ignore:
+      - '.github/**'
+      - '**.md'
+      - 'images/**'
+  workflow_dispatch:
+
+jobs:
+
+  e2e-tests:
+
+    timeout-minutes: 15
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Checkout all branches and tags
+
+      - name: git branch
+        run: git branch
+
+      - name: Install dependencies
+        run: npm install && npx lerna bootstrap
+
+      - name: Run test
+        run: npx lerna run test --stream
+
+      - name: Run one
+        run: cd packages/one; node src
+
+      - name: Run two
+        run: cd packages/one; node src
