@@ -1,0 +1,23 @@
+{
+  "name": "@pfapi/cicd-test-three",
+  "version": "1.0.0",
+  "description": "ci/cd test three",
+  "main": "src/index.js",
+  "bugs": {
+    "url": "https://github.com/pfapi/cicd-test/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pfapi/cicd-test.git"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha --timeout 10000 --exit --reporter spec tests/test-*",
+    "genPackagelock": "npm i --package-lock-only"
+  },
+  "author": "Sam Wen",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
