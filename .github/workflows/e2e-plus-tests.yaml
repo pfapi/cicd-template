@@ -38,3 +38,8 @@ jobs:
 
       - name: Run test
         run: npx lerna run test --stream
+
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
