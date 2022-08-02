@@ -30,8 +30,11 @@ jobs:
       - name: git branch
         run: git branch
 
-      - name: Install dependencies
-        run: npm install && npx lerna bootstrap
+      - name: install dependencies
+        run: npm install
+
+      - name: lerna bootstrap
+        run: npx lerna bootstrap
 
       - name: Run test
         run: npx lerna run test --stream
