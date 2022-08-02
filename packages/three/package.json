@@ -17,6 +17,8 @@
   "author": "Sam Wen",
   "license": "MIT",
   "dependencies": {
+    "@pfapi/cicd-test-one": "^1.0.1",
+    "@pfapi/cicd-test-two": "^1.0.1",
     "chai": "^4.3.6",
     "mocha": "^10.0.0"
   }
