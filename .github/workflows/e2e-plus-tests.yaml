@@ -30,8 +30,21 @@ jobs:
       - name: git branch
         run: git branch
 
-      - name: Install dependencies
-        run: npm install && npx lerna bootstrap
+      - name: install dependencies
+        run: npm install
+
+      - name: lerna bootstrap
+        run: npx lerna bootstrap
 
       - name: Run test
         run: npx lerna run test --stream
+
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: automerge
+
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.15.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_REMOVE_LABELS: "automerge"
