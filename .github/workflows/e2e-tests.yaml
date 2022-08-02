@@ -35,9 +35,3 @@ jobs:
 
       - name: Run test
         run: npx lerna run test --stream
-
-      - name: Run one
-        run: cd packages/one; node src
-
-      - name: Run two
-        run: cd packages/one; node src
