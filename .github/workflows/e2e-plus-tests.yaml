@@ -50,7 +50,7 @@ jobs:
         run: npx lerna run test --stream
 
       - name: git add and commit
-        run: git add . && [ -z "$(git status | grep 'nothing to commit')" ] && git commit -m "updated by e2e-plus"
+        run: git add . && [ -z "$(git status | grep 'nothing to commit')" ] && git commit -m "updated by e2e-plus" || true
 
       - name: checkout main
         run: git checkout main && git pull
