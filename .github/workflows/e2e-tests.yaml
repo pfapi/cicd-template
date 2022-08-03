@@ -3,13 +3,6 @@ on:
   pull_request:
     branches:
       - development
-    types: 
-      - opened
-      - synchronize
-    paths-ignore:
-      - '.github/**'
-      - '**.md'
-      - 'images/**'
   workflow_dispatch:
 
 jobs:
