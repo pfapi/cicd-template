@@ -22,12 +22,22 @@ jobs:
 
     steps:
 
+      - name: setup git config
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: setup npm credential
+        run: npm set "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      - name: checkout main
+      - name: checkout development
         run: git checkout development && git pull
 
       - name: install dependencies
@@ -53,16 +63,6 @@ jobs:
 
       - name: lerna bootstrap
         run: npx lerna bootstrap
-
-      - name: setup git config
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: setup npm credential
-        run: npm set "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: version and publish
         run: |
