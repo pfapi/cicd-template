@@ -22,8 +22,8 @@ jobs:
 
     steps:
 
-      - name: show $GITHUB_ENV
-        run: cat $GITHUB_ENV
+      - name: show PR#
+        run: cat ${{ github.event.number }}
   
       - name: Checkout
         uses: actions/checkout@v3

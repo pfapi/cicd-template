@@ -35,13 +35,8 @@ jobs:
       - name: setup npm credential
         run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
-      - name: build GITHUB_ENV
-        run: echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_PASS }}
-
       - name: checkout development
-        run: git checkout development && git pull
+        run: git checkout development && git pull && git branch 
 
       - name: install dependencies
         run: npm install
