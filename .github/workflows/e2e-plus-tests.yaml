@@ -48,3 +48,24 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_REMOVE_LABELS: "automerge"
+
+      - name: setup git config
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: setup npm credential
+        run: npm set "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: version and publish
+        run: |
+          if [ "${GITHUB_REF##*/}" = main ]; then
+            npx lerna version --conventional-commits --conventional-graduate --create-release --yes
+          else
+            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+          fi
+          npx lerna publish from-git --yes
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_PASS }}
