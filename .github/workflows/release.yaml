@@ -38,7 +38,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: build GITHUB_ENV
-        run: echo "GITHUB_TOKEN=${{ s}}" >> $GITHUB_ENV
+        run: echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_PASS }}
 
