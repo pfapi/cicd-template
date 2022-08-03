@@ -9,6 +9,8 @@ git merge featureA --squash # Squash "Feature A" to end of main
 
 TMP_BRANCH_NAME="$(git rev-parse --short HEAD)-tmp-$(date +%s)"
 
+TMP_BRANCH_NAME="$(uuidgen)-e2e-test"
+
 git checkout -b $TMP_BRANCH_NAME development
 
 git add .
