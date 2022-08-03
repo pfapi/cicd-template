@@ -40,6 +40,7 @@ jobs:
       - name: generate tmp branch name
         run: |
           TMP_BRANCH_NAME="$(uuidgen)-e2e"
+          echo "TMP_BRANCH_NAME=$TMP_BRANCH_NAME" >> $GITHUB_ENV
 
 
       - name: show info
