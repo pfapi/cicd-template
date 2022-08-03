@@ -15,7 +15,7 @@ git add .
 
 git commit -am "commit $tmp_branch_name by pfapi"
 
-git push
+git push --set-upstream origin $tmp_branch_name
 
 git checkout development
 
