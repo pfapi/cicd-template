@@ -58,7 +58,7 @@ jobs:
       
       - name: version && publish
         run: |
-          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag beta --dist-tag next
+          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag next --dist-tag next
           npx lerna publish from-git --yes
         env:
             GH_TOKEN: ${{ secrets.ACCESS_PASS }}
