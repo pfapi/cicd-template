@@ -37,6 +37,12 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: build GITHUB_ENV
+        run: |
+          echo "GITHUB_TOKEN=${{ s}}" >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_PASS }}
+
       - name: checkout development
         run: git checkout development && git pull
 
@@ -55,6 +61,9 @@ jobs:
       - name: checkout main
         run: git checkout main && git pull
 
+      - name: disable main branch protection
+        run: bin/disable-protection
+
       - name: merge into main
         run: git merge development
 
@@ -70,9 +79,19 @@ jobs:
       - name: git add and commit
         run: git add . && git commit -m "updated by e2e-plus" || true
 
+      - name: enable main branch protection
+        if: always()
+        run: bin/enable-protection
+
       - name: version and publish
         run: |
           npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes
           npx lerna publish from-git --yes
         env:
           GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+
+      - name: checkout development
+        run: git checkout development && git pull
+      
+      - name: merge into development
+        run: git merge main
