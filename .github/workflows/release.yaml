@@ -33,9 +33,7 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
       - name: setup npm credential
-        run: npm set "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
       - name: build GITHUB_ENV
         run: echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
@@ -60,7 +58,7 @@ jobs:
       - name: checkout main
         run: git checkout main && git pull
 
-      - name: merge into main
+      - name: merge development into main
         run: git merge development
 
       - name: install dependencies
@@ -85,6 +83,6 @@ jobs:
       - name: checkout development
         run: git checkout development && git pull
       
-      - name: merge into development
+      - name: merge main into development
         run: git merge main
 
