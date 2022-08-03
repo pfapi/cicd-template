@@ -60,9 +60,6 @@ jobs:
       - name: checkout main
         run: git checkout main && git pull
 
-      - name: disable main branch protection
-        run: bin/disable-protection
-
       - name: merge into main
         run: git merge development
 
@@ -77,10 +74,6 @@ jobs:
 
       - name: git add and commit
         run: git add . && git commit -m "updated by e2e-plus" || true
-
-      - name: enable main branch protection
-        if: always()
-        run: bin/enable-protection
 
       - name: version and publish
         run: |
