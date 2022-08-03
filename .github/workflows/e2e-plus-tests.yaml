@@ -52,8 +52,11 @@ jobs:
       - name: checkout main
         run: git checkout main
 
-      - name: show branch
-        run: git branch
+      - name: install dependencies
+        run: npm install
+
+      - name: lerna bootstrap
+        run: npx lerna bootstrap
 
       - name: setup git config
         run: |
