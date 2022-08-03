@@ -3,7 +3,6 @@ on:
   pull_request:
     branches:
       - development
-  workflow_dispatch:
 
 jobs:
 
@@ -20,19 +19,16 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      - name: show info
-        run: |
-          env
-          cat $GITHUB_EVENT_PATH
-          [ -f note.txt ] && cat note.txt
+      # - name: show info
+      #   run: |
+      #     env
+      #     cat $GITHUB_EVENT_PATH
 
-      - name: setup git config
+      - name: setup git config & npm
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: setup npm credential
-        run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+          npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
       - name: install dependencies
         run: npm install
@@ -43,15 +39,11 @@ jobs:
       - name: Run test
         run: npx lerna run test --stream
 
-      - name: commit and push 
+      - name: commit and merge into GITHUB_BASE_REF
         run: |
           git config advice.detached head false
           git add .
           git commit -am "commit $GITHUB_REF_NAME by e2e-test"
-          # git push --set-upstream origin $GITHUB_REF_NAME
-
-      - name: merge into GITHUB_BASE_REF
-        run: |
           git branch temporary-work
           git checkout $GITHUB_BASE_REF
           git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test"
