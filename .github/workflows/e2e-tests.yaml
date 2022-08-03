@@ -23,7 +23,7 @@ jobs:
     steps:
 
       - name: show $GITHUB_ENV
-        run: echo "$GITHUB_ENV"
+        run: echo $GITHUB_ENV ; cat $GITHUB_ENV
   
       - name: Checkout
         uses: actions/checkout@v3
