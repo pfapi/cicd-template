@@ -22,20 +22,14 @@ jobs:
 
     steps:
 
-      - name: find PR#
-        uses: jwalton/gh-find-current-pr@v1
-        id: find_pr
-
-      - run: echo "Your PR is ${PR}"
-        if: success() && steps.findPr.outputs.number
-        env:
-          PR: ${{ steps.findPr.outputs.pr }}
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
+      - name: branch
+        run: git branch
+        
       - name: git branch
         run: git branch
 
