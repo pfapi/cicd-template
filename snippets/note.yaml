@@ -25,3 +25,14 @@
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_REMOVE_LABELS: "automerge"
+
+      - name: version and publish
+        run: |
+          if [ "${GITHUB_REF##*/}" = main ]; then
+            npx lerna version --conventional-commits --conventional-graduate --create-release --yes
+          else
+            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+          fi
+          npx lerna publish from-git --yes
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_PASS }}
