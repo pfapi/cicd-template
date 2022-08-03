@@ -1,4 +1,4 @@
-name: e2e plus tests
+name: release
 on: 
   pull_request:
     branches:
@@ -14,7 +14,7 @@ on:
 
 jobs:
 
-  e2e-plus-tests:
+  release:
 
     timeout-minutes: 15
 
