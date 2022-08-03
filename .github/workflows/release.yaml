@@ -32,60 +32,62 @@ jobs:
           x=$(git branch) && echo "CHECKOUT_BRANCH='$x'" >> $GITHUB_ENV
           x=$(node -p 'require("./lerna.json").version' && echo "CURRENT_VERSION='$x'" >> $GITHUB_ENV
       
-      - name: show env
-        run: env
-
-      - name: setup git config
+      - name: show info
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          env
+          cat $GITHUB_EVENT_PATH
 
-      - name: setup npm credential
-        run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+      # - name: setup git config
+      #   run: |
+      #     git config user.name "${{ github.actor }}"
+      #     git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: checkout development
-        run: git checkout development && git pull && git branch 
+      # - name: setup npm credential
+      #   run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
-      - name: install dependencies
-        run: npm install
+      # - name: checkout development
+      #   run: git checkout development && git pull && git branch 
 
-      - name: lerna bootstrap
-        run: npx lerna bootstrap
+      # - name: install dependencies
+      #   run: npm install
 
-      - name: Run test
-        run: npx lerna run test --stream
+      # - name: lerna bootstrap
+      #   run: npx lerna bootstrap
 
-      - name: git add and commit
-        run: git add . && git commit -m "updated by e2e-plus" || true
+      # - name: Run test
+      #   run: npx lerna run test --stream
 
-      - name: checkout main
-        run: git checkout main && git pull
+      # - name: git add and commit
+      #   run: git add . && git commit -m "updated by e2e-plus" || true
 
-      - name: merge development into main
-        run: git merge development
+      # - name: checkout main
+      #   run: git checkout main && git pull
 
-      - name: install dependencies
-        run: npm install
+      # - name: merge development into main
+      #   run: git merge development
 
-      - name: lerna bootstrap
-        run: npx lerna bootstrap
+      # - name: install dependencies
+      #   run: npm install
+
+      # - name: lerna bootstrap
+      #   run: npx lerna bootstrap
     
-      - name: Run test
-        run: npx lerna run test --stream
+      # - name: Run test
+      #   run: npx lerna run test --stream
 
-      - name: git add and commit
-        run: git add . && git commit -m "updated by e2e-plus" || true
+      # - name: git add and commit
+      #   run: git add . && git commit -m "updated by e2e-plus" || true
 
-      - name: version and publish
-        run: |
-          npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes
-          npx lerna publish from-git --yes
-        env:
-          GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+      # - name: version and publish
+      #   run: |
+      #     npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes
+      #     npx lerna publish from-git --yes
+      #   env:
+      #     GH_TOKEN: ${{ secrets.ACCESS_PASS }}
 
-      - name: checkout development
-        run: git checkout development && git pull
+      # - name: checkout development
+      #   run: git checkout development && git pull
       
-      - name: merge main into development
-        run: git merge main
+      # - name: merge main into development
+      #   run: git merge main
 

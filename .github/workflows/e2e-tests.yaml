@@ -27,22 +27,24 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
       
-      - name: show env
-        run: env
-
-      - name: setup git config
+      - name: show info
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          env
+          cat $GITHUB_EVENT_PATH
 
-      - name: setup npm credential
-        run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+      # - name: setup git config
+      #   run: |
+      #     git config user.name "${{ github.actor }}"
+      #     git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: install dependencies
-        run: npm install
+      # - name: setup npm credential
+      #   run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
-      - name: lerna bootstrap
-        run: npx lerna bootstrap
+      # - name: install dependencies
+      #   run: npm install
 
-      - name: Run test
-        run: npx lerna run test --stream
+      # - name: lerna bootstrap
+      #   run: npx lerna bootstrap
+
+      # - name: Run test
+      #   run: npx lerna run test --stream
