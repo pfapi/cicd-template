@@ -22,6 +22,11 @@ jobs:
 
     steps:
 
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Checkout all branches and tags
+
       - name: setup git config
         run: |
           git config user.name "${{ github.actor }}"
@@ -31,11 +36,6 @@ jobs:
         run: npm set "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Checkout all branches and tags
 
       - name: checkout development
         run: git checkout development && git pull
