@@ -34,7 +34,7 @@ jobs:
         run: npm install
 
       - name: lerna bootstrap
-        run: npx lerna bootstrap
+        run: npx lerna bootstrap --stream
 
       - name: Run test
         run: npx lerna run test --stream
@@ -50,13 +50,13 @@ jobs:
           MERGE_REMOVE_LABELS: "automerge"
 
       - name: checkout main
-        run: git checkout main
+        run: git checkout main && git pull
 
       - name: install dependencies
         run: npm install
 
       - name: lerna bootstrap
-        run: npx lerna bootstrap
+        run: npx lerna bootstrap --stream
 
       - name: setup git config
         run: |
