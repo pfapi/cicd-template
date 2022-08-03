@@ -3,7 +3,6 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - development
       - main
   workflow_dispatch:
 

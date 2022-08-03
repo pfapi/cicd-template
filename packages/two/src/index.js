@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = () => {
-    console.log('packages/two/src/index.js running');
+    console.log('two is running');
     return 'two';
 }
