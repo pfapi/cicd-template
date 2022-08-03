@@ -27,8 +27,8 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      - name: git branch
-        run: git branch
+      - name: checkout main
+        run: git checkout development && git pull
 
       - name: install dependencies
         run: npm install
@@ -39,18 +39,14 @@ jobs:
       - name: Run test
         run: npx lerna run test --stream
 
-      - uses: actions-ecosystem/action-add-labels@v1
-        with:
-          labels: automerge
-
-      - name: automerge
-        uses: "pascalgn/automerge-action@v0.15.3"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_REMOVE_LABELS: "automerge"
+      - name: git add and commit
+        run: git add . && git commit -m "updated by e2e-plus"
 
       - name: checkout main
         run: git checkout main && git pull
+
+      - name: merge into main
+        run: git merge development
 
       - name: install dependencies
         run: npm install
