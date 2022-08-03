@@ -41,14 +41,6 @@ jobs:
       - name: setup npm credential
         run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
-      # - name: setup tmp branch
-      #   run: |
-      #     TMP_BRANCH_NAME="$(uuidgen)-e2e-test"
-      #     echo "TMP_BRANCH_NAME=$TMP_BRANCH_NAME" >> $GITHUB_ENV
-      #     git branch $TMP_BRANCH_NAME
-      #     git checkout $GITHUB_BASE_REF
-      #     git merge $TMP_BRANCH_NAME -m "merge $GITHUB_REF_NAME by e2e-test"
-
       - name: install dependencies
         run: npm install
 
