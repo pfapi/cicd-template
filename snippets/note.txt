@@ -7,20 +7,20 @@ git checkout main           # Switch to main
 git merge featureA --squash # Squash "Feature A" to end of main
 
 
-tmp_branch_name="$(git rev-parse --short HEAD)-temp"
+TMP_BRANCH_NAME="$(git rev-parse --short HEAD)-tmp-$(date +%s)"
 
-git checkout -b $tmp_branch_name development
+git checkout -b $TMP_BRANCH_NAME development
 
 git add .
 
-git commit -am "commit $tmp_branch_name by pfapi"
+git commit -am "commit $TMP_BRANCH_NAME by pfapi"
 
-git push --set-upstream origin $tmp_branch_name
+git push --set-upstream origin $TMP_BRANCH_NAME
 
 git checkout development
 
-git merge $tmp_branch_name -m "merge $tmp_branch_name by pfapi"
+git merge $TMP_BRANCH_NAME -m "merge $TMP_BRANCH_NAME by pfapi"
 
-git branch -d $tmp_branch_name
+git branch -d $TMP_BRANCH_NAME
 
-git push origin --delete $tmp_branch_name
+git push origin --delete $TMP_BRANCH_NAME

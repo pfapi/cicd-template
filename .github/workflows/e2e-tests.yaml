@@ -37,6 +37,11 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
       
+      - name: generate tmp branch name
+        run: |
+          TMP_BRANCH_NAME="$(uuidgen)-e2e"
+
+
       - name: show info
         run: |
           env
