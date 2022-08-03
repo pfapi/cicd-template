@@ -61,19 +61,18 @@ jobs:
       - name: install dependencies
         run: npm install
 
+      - name: lerna bootstrap
+        run: npx lerna bootstrap
+    
+      - name: Run test
+        run: npx lerna run test --stream
+
       - name: git add and commit
         run: git add . && git commit -m "updated by e2e-plus" || true
 
-      - name: lerna bootstrap
-        run: npx lerna bootstrap
-
       - name: version and publish
         run: |
-          if [ "${GITHUB_REF##*/}" = main ]; then
-            npx lerna version --conventional-commits --conventional-graduate --create-release --yes
-          else
-            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
-          fi
+          npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes
           npx lerna publish from-git --yes
         env:
           GH_TOKEN: ${{ secrets.ACCESS_PASS }}
