@@ -1,0 +1,7 @@
+git rev-parse --short HEAD
+
+git checkout featureA       # Start from "Feature A" branch
+git fetch origin            # Keep remote branches up to date
+git rebase origin/main      # Rebase the "main" to "Feature A"
+git checkout main           # Switch to main
+git merge featureA --squash # Squash "Feature A" to end of main

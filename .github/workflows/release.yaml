@@ -75,7 +75,7 @@ jobs:
 
       # - name: version and publish
       #   run: |
-      #     npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes
+      #     npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes --dist-tag latest
       #     npx lerna publish from-git --yes
       #   env:
       #     GH_TOKEN: ${{ secrets.ACCESS_PASS }}

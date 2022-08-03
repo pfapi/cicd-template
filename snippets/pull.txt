@@ -1,0 +1,96 @@
+SELENIUM_JAR_PATH=/usr/share/java/selenium-server.jar
+GOROOT_1_17_X64=/opt/hostedtoolcache/go/1.17.12/x64
+CONDA=/usr/share/miniconda
+GITHUB_WORKSPACE=/home/runner/work/cicd-test/cicd-test
+JAVA_HOME_11_X64=/usr/lib/jvm/temurin-11-jdk-amd64
+GITHUB_PATH=/home/runner/work/_temp/_runner_file_commands/add_path_c46513a3-92c1-4ed8-a744-5c28a763d816
+GITHUB_ACTION=__run
+JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64
+GITHUB_RUN_NUMBER=13
+RUNNER_NAME=Hosted Agent
+GRADLE_HOME=/usr/share/gradle-7.5
+XDG_CONFIG_HOME=/home/runner/.config
+DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+ANT_HOME=/usr/share/ant
+JAVA_HOME_8_X64=/usr/lib/jvm/temurin-8-jdk-amd64
+GITHUB_TRIGGERING_ACTOR=pfapi
+HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+GITHUB_REF_TYPE=branch
+HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS=3650
+ANDROID_NDK=/usr/local/lib/android/sdk/ndk/25.0.8775105
+BOOTSTRAP_HASKELL_NONINTERACTIVE=1
+***
+PIPX_BIN_DIR=/opt/pipx_bin
+DEPLOYMENT_BASEPATH=/opt/runner
+GITHUB_ACTIONS=true
+ANDROID_NDK_LATEST_HOME=/usr/local/lib/android/sdk/ndk/25.0.8775105
+GITHUB_SHA=04adeca1b534e740966491f075b3438e957b8fd6
+POWERSHELL_DISTRIBUTION_CHANNEL=GitHub-Actions-ubuntu20
+DOTNET_MULTILEVEL_LOOKUP=0
+GITHUB_REF=refs/pull/19/merge
+RUNNER_OS=Linux
+GITHUB_REF_PROTECTED=false
+HOME=/home/runner
+GITHUB_API_URL=https://api.github.com
+LANG=C.UTF-8
+RUNNER_TRACKING_ID=github_5bed8a4a-fdc5-43e6-a50b-b104aa80c351
+RUNNER_ARCH=X64
+RUNNER_TEMP=/home/runner/work/_temp
+EDGEWEBDRIVER=/usr/local/share/edge_driver
+GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/set_env_c46513a3-92c1-4ed8-a744-5c28a763d816
+GITHUB_EVENT_PATH=/home/runner/work/_temp/_github_workflow/event.json
+INVOCATION_ID=654bbc9cb3b946ac9728142cd65f4a29
+GITHUB_EVENT_NAME=pull_request
+GITHUB_RUN_ID=2789377218
+JAVA_HOME_17_X64=/usr/lib/jvm/temurin-17-jdk-amd64
+      "repos_url": "https://api.github.com/users/pfapi/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/pfapi"
+    },
+    "private": false,
+    "pulls_url": "https://api.github.com/repos/pfapi/cicd-test/pulls{/number}",
+    "pushed_at": "2022-08-03T12:25:02Z",
+    "releases_url": "https://api.github.com/repos/pfapi/cicd-test/releases{/id}",
+    "size": 371,
+    "ssh_url": "git@github.com:pfapi/cicd-test.git",
+    "stargazers_count": 0,
+    "stargazers_url": "https://api.github.com/repos/pfapi/cicd-test/stargazers",
+    "statuses_url": "https://api.github.com/repos/pfapi/cicd-test/statuses/{sha}",
+    "subscribers_url": "https://api.github.com/repos/pfapi/cicd-test/subscribers",
+    "subscription_url": "https://api.github.com/repos/pfapi/cicd-test/subscription",
+    "svn_url": "https://github.com/pfapi/cicd-test",
+    "tags_url": "https://api.github.com/repos/pfapi/cicd-test/tags",
+    "teams_url": "https://api.github.com/repos/pfapi/cicd-test/teams",
+    "topics": [],
+    "trees_url": "https://api.github.com/repos/pfapi/cicd-test/git/trees{/sha}",
+    "updated_at": "2022-08-03T03:13:46Z",
+    "url": "https://api.github.com/repos/pfapi/cicd-test",
+    "visibility": "public",
+    "watchers": 0,
+    "watchers_count": 0,
+    "web_commit_signoff_required": false
+  },
+  "sender": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/109823601?v=4",
+    "events_url": "https://api.github.com/users/pfapi/events{/privacy}",
+    "followers_url": "https://api.github.com/users/pfapi/followers",
+    "following_url": "https://api.github.com/users/pfapi/following{/other_user}",
+    "gists_url": "https://api.github.com/users/pfapi/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/pfapi",
+    "id": 109823601,
+    "login": "pfapi",
+    "node_id": "U_kgDOBovGcQ",
+    "organizations_url": "https://api.github.com/users/pfapi/orgs",
+    "received_events_url": "https://api.github.com/users/pfapi/received_events",
+    "repos_url": "https://api.github.com/users/pfapi/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
+    "type": "User",
+    "url": "https://api.github.com/users/pfapi"
+  }
+}

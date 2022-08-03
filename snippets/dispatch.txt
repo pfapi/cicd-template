@@ -1,0 +1,133 @@
+SELENIUM_JAR_PATH=/usr/share/java/selenium-server.jar
+GOROOT_1_17_X64=/opt/hostedtoolcache/go/1.17.12/x64
+CONDA=/usr/share/miniconda
+GITHUB_WORKSPACE=/home/runner/work/cicd-test/cicd-test
+JAVA_HOME_11_X64=/usr/lib/jvm/temurin-11-jdk-amd64
+GITHUB_PATH=/home/runner/work/_temp/_runner_file_commands/add_path_6ea83d49-bf42-487f-8c8b-8c0495986137
+GITHUB_ACTION=__run
+JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64
+GITHUB_RUN_NUMBER=16
+RUNNER_NAME=Hosted Agent
+GRADLE_HOME=/usr/share/gradle-7.5
+XDG_CONFIG_HOME=/home/runner/.config
+DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+ANT_HOME=/usr/share/ant
+JAVA_HOME_8_X64=/usr/lib/jvm/temurin-8-jdk-amd64
+GITHUB_TRIGGERING_ACTOR=pfapi
+HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+GITHUB_REF_TYPE=branch
+HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS=3650
+ANDROID_NDK=/usr/local/lib/android/sdk/ndk/25.0.8775105
+BOOTSTRAP_HASKELL_NONINTERACTIVE=1
+***
+PIPX_BIN_DIR=/opt/pipx_bin
+DEPLOYMENT_BASEPATH=/opt/runner
+GITHUB_ACTIONS=true
+ANDROID_NDK_LATEST_HOME=/usr/local/lib/android/sdk/ndk/25.0.8775105
+GITHUB_SHA=4541715d97b7cf16cf1c6c0d5e4afb2210afa045
+POWERSHELL_DISTRIBUTION_CHANNEL=GitHub-Actions-ubuntu20
+DOTNET_MULTILEVEL_LOOKUP=0
+GITHUB_REF=refs/heads/development
+RUNNER_OS=Linux
+GITHUB_REF_PROTECTED=false
+HOME=/home/runner
+GITHUB_API_URL=https://api.github.com
+LANG=C.UTF-8
+RUNNER_TRACKING_ID=github_b4e38b9c-a92f-4ee5-925f-f80f1f601742
+STATS_KEEPALIVE=false
+RUNNER_ARCH=X64
+RUNNER_TEMP=/home/runner/work/_temp
+EDGEWEBDRIVER=/usr/local/share/edge_driver
+GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/set_env_6ea83d49-bf42-487f-8c8b-8c0495986137
+GITHUB_EVENT_PATH=/home/runner/work/_temp/_github_workflow/event.json
+INVOCATION_ID=b639743c41e143fd8008f9d24cdcb409
+GITHUB_EVENT_NAME=workflow_dispatch
+GITHUB_RUN_ID=2789355528
+{
+    "issue_comment_url": "https://api.github.com/repos/pfapi/cicd-test/issues/comments{/number}",
+    "issue_events_url": "https://api.github.com/repos/pfapi/cicd-test/issues/events{/number}",
+    "issues_url": "https://api.github.com/repos/pfapi/cicd-test/issues{/number}",
+    "keys_url": "https://api.github.com/repos/pfapi/cicd-test/keys{/key_id}",
+    "labels_url": "https://api.github.com/repos/pfapi/cicd-test/labels{/name}",
+    "language": "Shell",
+    "languages_url": "https://api.github.com/repos/pfapi/cicd-test/languages",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "node_id": "MDc6TGljZW5zZTEz",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit"
+    },
+    "merges_url": "https://api.github.com/repos/pfapi/cicd-test/merges",
+    "milestones_url": "https://api.github.com/repos/pfapi/cicd-test/milestones{/number}",
+    "mirror_url": null,
+    "name": "cicd-test",
+    "node_id": "R_kgDOHwh0Kg",
+    "notifications_url": "https://api.github.com/repos/pfapi/cicd-test/notifications{?since,all,participating}",
+    "open_issues": 0,
+    "open_issues_count": 0,
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/109823601?v=4",
+      "events_url": "https://api.github.com/users/pfapi/events{/privacy}",
+      "followers_url": "https://api.github.com/users/pfapi/followers",
+      "following_url": "https://api.github.com/users/pfapi/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pfapi/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/pfapi",
+      "id": 109823601,
+      "login": "pfapi",
+      "node_id": "U_kgDOBovGcQ",
+      "organizations_url": "https://api.github.com/users/pfapi/orgs",
+      "received_events_url": "https://api.github.com/users/pfapi/received_events",
+      "repos_url": "https://api.github.com/users/pfapi/repos",
+      "site_admin": false,
+      "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
+      "type": "User",
+      "url": "https://api.github.com/users/pfapi"
+    },
+    "private": false,
+    "pulls_url": "https://api.github.com/repos/pfapi/cicd-test/pulls{/number}",
+    "pushed_at": "2022-08-03T12:20:57Z",
+    "releases_url": "https://api.github.com/repos/pfapi/cicd-test/releases{/id}",
+    "size": 371,
+    "ssh_url": "git@github.com:pfapi/cicd-test.git",
+    "stargazers_count": 0,
+    "stargazers_url": "https://api.github.com/repos/pfapi/cicd-test/stargazers",
+    "statuses_url": "https://api.github.com/repos/pfapi/cicd-test/statuses/{sha}",
+    "subscribers_url": "https://api.github.com/repos/pfapi/cicd-test/subscribers",
+    "subscription_url": "https://api.github.com/repos/pfapi/cicd-test/subscription",
+    "svn_url": "https://github.com/pfapi/cicd-test",
+    "tags_url": "https://api.github.com/repos/pfapi/cicd-test/tags",
+    "teams_url": "https://api.github.com/repos/pfapi/cicd-test/teams",
+    "topics": [],
+    "trees_url": "https://api.github.com/repos/pfapi/cicd-test/git/trees{/sha}",
+    "updated_at": "2022-08-03T03:13:46Z",
+    "url": "https://api.github.com/repos/pfapi/cicd-test",
+    "visibility": "public",
+    "watchers": 0,
+    "watchers_count": 0,
+    "web_commit_signoff_required": false
+  },
+  "sender": {
+    "avatar_url": "https://avatars.githubusercontent.com/u/109823601?v=4",
+    "events_url": "https://api.github.com/users/pfapi/events{/privacy}",
+    "followers_url": "https://api.github.com/users/pfapi/followers",
+    "following_url": "https://api.github.com/users/pfapi/following{/other_user}",
+    "gists_url": "https://api.github.com/users/pfapi/gists{/gist_id}",
+    "gravatar_id": "",
+    "html_url": "https://github.com/pfapi",
+    "id": 109823601,
+    "login": "pfapi",
+    "node_id": "U_kgDOBovGcQ",
+    "organizations_url": "https://api.github.com/users/pfapi/orgs",
+    "received_events_url": "https://api.github.com/users/pfapi/received_events",
+    "repos_url": "https://api.github.com/users/pfapi/repos",
+    "site_admin": false,
+    "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
+    "type": "User",
+    "url": "https://api.github.com/users/pfapi"
+  },
+  "workflow": ".github/workflows/e2e-tests.yaml"
+}

@@ -29,9 +29,9 @@
       - name: version and publish
         run: |
           if [ "${GITHUB_REF##*/}" = main ]; then
-            npx lerna version --conventional-commits --conventional-graduate --create-release --yes
+            npx lerna version --conventional-commits --conventional-graduate --dist-tag latest --create-release --yes --dist-tag latest
           else
-            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag beta --dist-tag next 
           fi
           npx lerna publish from-git --yes
         env:

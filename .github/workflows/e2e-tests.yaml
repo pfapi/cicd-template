@@ -1,5 +1,15 @@
 name: e2e tests
 on:
+  push:
+    branches:
+      - development
+    types: 
+      - opened
+      - synchronize
+    paths-ignore:
+      - '.github/**'
+      - '**.md'
+      - 'images/**'      
   pull_request:
     branches:
       - development
@@ -32,13 +42,13 @@ jobs:
           env
           cat $GITHUB_EVENT_PATH
 
-      # - name: setup git config
-      #   run: |
-      #     git config user.name "${{ github.actor }}"
-      #     git config user.email "${{ github.actor }}@users.noreply.github.com"
+      - name: setup git config
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      # - name: setup npm credential
-      #   run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+      - name: setup npm credential
+        run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
       # - name: install dependencies
       #   run: npm install
