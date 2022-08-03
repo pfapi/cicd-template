@@ -53,7 +53,7 @@ jobs:
           git commit -am "commit $GITHUB_REF_NAME by e2e-test"
           git branch temporary-work
           git checkout $GITHUB_BASE_REF
-          git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test"
+          git merge temporary-work --squash -m "merge $GITHUB_REF_NAME by e2e-test"
       
       - name: version & publish
         run: |

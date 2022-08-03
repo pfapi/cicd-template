@@ -1,0 +1,33 @@
+name: to release
+on:
+  workflow_dispatch
+jobs:
+
+  to-release:
+
+    timeout-minutes: 15
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Checkout all branches and tags
+
+      - name: setup git config
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: sync changed files
+        run: |
+          git checkout development
+          bin/save-files
+          cp -pr bin/apply-files /tmp
+          git checkout main
+          /tmp/apply-files
+          git add .
+          git commit -m "sync changed files by to-release" || true
+          git push || true
