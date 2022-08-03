@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-[ -z "$GITHUB_ENV" ] || . $GITHUB_ENV
-
-curl -X GET https://api.github.com/repos/pfapi/cicd-test/branches/main/protection \
-  -H "Accept: application/vnd.github.luke-cage-preview+json" \
-  -H "Authorization: token $GITHUB_TOKEN" \
-  -H "Content-Type: application/json"
