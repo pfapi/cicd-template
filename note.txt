@@ -1,3 +1,13 @@
 *************
 note.txt
 ===================
+
+push
+
+GITHUB_REF_NAME=development
+GITHUB_BASE_REF=
+
+pulls
+
+GITHUB_REF_NAME=20/merge
+GITHUB_BASE_REF=development

@@ -1,12 +1,5 @@
 name: e2e tests
 on:
-  push:
-    branches:
-      - development
-    paths-ignore:
-      - '.github/**'
-      - '**.md'
-      - 'images/**'      
   pull_request:
     branches:
       - development
@@ -33,11 +26,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Checkout all branches and tags
-      
-      - name: generate tmp branch name
-        run: |
-          TMP_BRANCH_NAME="$(uuidgen)-e2e"
-          echo "TMP_BRANCH_NAME=$TMP_BRANCH_NAME" >> $GITHUB_ENV
 
       - name: show info
         run: |
@@ -53,11 +41,29 @@ jobs:
       - name: setup npm credential
         run: npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
-      # - name: install dependencies
-      #   run: npm install
+      - name: install dependencies
+        run: npm install
 
-      # - name: lerna bootstrap
-      #   run: npx lerna bootstrap
+      - name: lerna bootstrap
+        run: npx lerna bootstrap
 
-      # - name: Run test
-      #   run: npx lerna run test --stream
+      - name: Run test
+        run: npx lerna run test --stream
+
+      - name: commit and push 
+        run: |
+          git add .
+          git commit -am "commit $GITHUB_REF_NAME by e2e-test"
+          git push --set-upstream origin $GITHUB_REF_NAME
+
+      - name: version and publish
+        run: |
+          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag beta --dist-tag next 
+          npx lerna publish from-git --yes
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+
+      - name: merge into GITHUB_BASE_REF
+        run: |
+          git checkout $GITHUB_BASE_REF
+          git merge $GITHUB_REF_NAME -m "merge $$GITHUB_REF_NAME by e2e-test"
