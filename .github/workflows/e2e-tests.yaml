@@ -22,7 +22,7 @@ jobs:
 
     steps:
 
-      - name: show PR#
+      - name: find PR#
         uses: jwalton/gh-find-current-pr@v1
         id: find_pr
 
@@ -30,7 +30,7 @@ jobs:
         if: success() && steps.findPr.outputs.number
         env:
           PR: ${{ steps.findPr.outputs.pr }}
-          
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
