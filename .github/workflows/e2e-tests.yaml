@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - development
-    types: 
-      - opened
-      - synchronize
     paths-ignore:
       - '.github/**'
       - '**.md'
@@ -41,7 +38,6 @@ jobs:
         run: |
           TMP_BRANCH_NAME="$(uuidgen)-e2e"
           echo "TMP_BRANCH_NAME=$TMP_BRANCH_NAME" >> $GITHUB_ENV
-
 
       - name: show info
         run: |
