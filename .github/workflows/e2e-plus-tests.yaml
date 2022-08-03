@@ -50,10 +50,13 @@ jobs:
           MERGE_REMOVE_LABELS: "automerge"
 
       - name: checkout main
-        run: git checkout main
+        run: git checkout main && git pull
 
-      - name: show branch
-        run: git branch
+      - name: install dependencies
+        run: npm install
+
+      - name: lerna bootstrap
+        run: npx lerna bootstrap
 
       - name: setup git config
         run: |
