@@ -15,7 +15,9 @@ git add .
 
 git commit -am "commit $tmp_branch_name by pfapi"
 
-merge --no-ff $tmp_branch_name -m "merge $tmp_branch_name by pfapi"
+git merge --no-ff $tmp_branch_name -m "merge $tmp_branch_name by pfapi"
+
+git checkout development
 
 git branch -d $tmp_branch_name
 
