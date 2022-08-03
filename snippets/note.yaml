@@ -29,11 +29,12 @@
       - name: version and publish
         run: |
           if [ "${GITHUB_REF##*/}" = main ]; then
-            npx lerna version --conventional-commits --conventional-graduate --dist-tag latest --create-release --yes --dist-tag latest
+            npx lerna version --conventional-commits --conventional-graduate --dist-tag latest --create-release --yes
+            npx lerna publish from-git --yes --dist-tag latest
           else
-            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag next 
+            npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+            npx lerna publish from-git --yes --dist-tag beta 
           fi
-          npx lerna publish from-git --yes
         env:
           GH_TOKEN: ${{ secrets.ACCESS_PASS }}
 

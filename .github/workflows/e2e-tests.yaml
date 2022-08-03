@@ -3,13 +3,6 @@ on:
   pull_request:
     branches:
       - development
-    types: 
-      - opened
-      - synchronize
-    paths-ignore:
-      - '.github/**'
-      - '**.md'
-      - 'images/**'
   workflow_dispatch:
 
 jobs:
@@ -63,9 +56,9 @@ jobs:
           git checkout $GITHUB_BASE_REF
           git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test"
       
-      - name: version && publish
+      - name: version & publish
         run: |
-          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag beta --dist-tag next
-          npx lerna publish from-git --yes
+          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+          npx lerna publish from-git --yes --dist-tag beta
         env:
             GH_TOKEN: ${{ secrets.ACCESS_PASS }}
