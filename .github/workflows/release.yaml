@@ -26,11 +26,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Checkout all branches and tags
-
-      - name: save info to GITHUB_ENV
-        run: |
-          x=$(git branch) && echo "CHECKOUT_BRANCH='$x'" >> $GITHUB_ENV
-          x=$(node -p 'require("./lerna.json").version' && echo "CURRENT_VERSION='$x'" >> $GITHUB_ENV
       
       - name: show info
         run: |
