@@ -29,5 +29,5 @@ jobs:
           git checkout main
           /tmp/apply-files
           git add .
-          git commit -m "sync changed files by to-release"
-          git push
+          git commit -m "sync changed files by to-release" || true
+          git push || true
