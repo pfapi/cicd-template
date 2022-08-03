@@ -49,6 +49,12 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_REMOVE_LABELS: "automerge"
 
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Checkout all branches and tags
+          ref: main
+
       - name: setup git config
         run: |
           git config user.name "${{ github.actor }}"
