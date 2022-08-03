@@ -23,7 +23,7 @@ jobs:
     steps:
 
       - name: show PR#
-        run: cat ${{ github.event.number }}
+        run: echo "${{ github.event.number }}"
   
       - name: Checkout
         uses: actions/checkout@v3
