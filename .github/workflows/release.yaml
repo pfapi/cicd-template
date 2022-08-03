@@ -29,8 +29,8 @@ jobs:
 
       - name: save info to GITHUB_ENV
         run: |
-          echo "CHECKOUT_BRANCH=$(git branch)" >> $GITHUB_ENV
-          echo "CURRENT_VERSION=$(node -p 'require("./lerna.json").version')" >> $GITHUB_ENV
+          x=$(git branch) && echo "CHECKOUT_BRANCH='$x'" >> $GITHUB_ENV
+          x=$(node -p 'require("./lerna.json").version && echo "CURRENT_VERSION='$x'" >> $GITHUB_ENV
       
       - name: show env
         run: env
