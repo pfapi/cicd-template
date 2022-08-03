@@ -63,16 +63,17 @@ jobs:
           git config advice.detached head false
           git add .
           git commit -am "commit $GITHUB_REF_NAME by e2e-test"
-          git push --set-upstream origin $GITHUB_REF_NAME
-
-      - name: version and publish
-        run: |
-          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag beta --dist-tag next 
-          npx lerna publish from-git --yes
-        env:
-          GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+          # git push --set-upstream origin $GITHUB_REF_NAME
 
       - name: merge into GITHUB_BASE_REF
         run: |
+          git branch temporary-work
           git checkout $GITHUB_BASE_REF
-          git merge $GITHUB_REF_NAME -m "merge $GITHUB_REF_NAME by e2e-test"
+          git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test"
+      
+      - name: version && publish
+        run: |
+          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes --dist-tag beta --dist-tag next
+          npx lerna publish from-git --yes
+        env:
+            GH_TOKEN: ${{ secrets.ACCESS_PASS }}
