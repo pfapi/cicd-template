@@ -29,10 +29,19 @@
       - name: version and publish
         run: |
           if [ "${GITHUB_REF##*/}" = main ]; then
-            npx lerna version --conventional-commits --conventional-graduate --create-release --yes
+            npx lerna version --conventional-commits --conventional-graduate --dist-tag latest --create-release --yes
+            npx lerna publish from-git --yes --dist-tag latest
           else
             npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+            npx lerna publish from-git --yes --dist-tag beta 
           fi
-          npx lerna publish from-git --yes
         env:
           GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+
+      # - name: setup tmp branch
+      #   run: |
+      #     TMP_BRANCH_NAME="$(uuidgen)-e2e-test"
+      #     echo "TMP_BRANCH_NAME=$TMP_BRANCH_NAME" >> $GITHUB_ENV
+      #     git branch $TMP_BRANCH_NAME
+      #     git checkout $GITHUB_BASE_REF
+      #     git merge $TMP_BRANCH_NAME -m "merge $GITHUB_REF_NAME by e2e-test"

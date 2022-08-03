@@ -1,8 +1,8 @@
-name: e2e tests
-on:
+name: production release
+on: 
   pull_request:
     branches:
-      - development
+      - main
     types: 
       - opened
       - reopened
@@ -11,9 +11,11 @@ on:
       - '.github/**'
       - '**.md'
       - 'images/**'
+  workflow_dispatch:
+
 jobs:
 
-  e2e-tests:
+  production-release:
 
     timeout-minutes: 15
 
@@ -57,7 +59,7 @@ jobs:
       
       - name: version & publish
         run: |
-          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
-          npx lerna publish from-git --yes --dist-tag beta
+          npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes
+          npx lerna publish from-git --yes --dist-tag latest
         env:
             GH_TOKEN: ${{ secrets.ACCESS_PASS }}
