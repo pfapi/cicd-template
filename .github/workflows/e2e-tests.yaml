@@ -43,6 +43,7 @@ jobs:
         run: |
           env
           cat $GITHUB_EVENT_PATH
+          [ -f note.txt ] && cat note.txt
 
       - name: setup git config
         run: |
