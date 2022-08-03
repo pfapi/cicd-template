@@ -7,4 +7,18 @@ git checkout main           # Switch to main
 git merge featureA --squash # Squash "Feature A" to end of main
 
 
-git checkout -b myFeatureOne development
+tmp_branch_name="$(git rev-parse --short HEAD)-temp"
+
+git checkout -b $tmp_branch_name development
+
+git add .
+
+git commit -am "commit $tmp_branch_name by pfapi"
+
+git checkout development
+
+git merge --no-ff $tmp_branch_name -m "merge $tmp_branch_name by pfapi"
+
+git branch -d $tmp_branch_name
+
+git push origin --delete $tmp_branch_name
