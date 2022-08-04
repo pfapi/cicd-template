@@ -38,10 +38,10 @@ jobs:
       - name: commit and merge into GITHUB_BASE_REF
         run: |
           git add .
-          git commit -am "commit $GITHUB_REF_NAME by e2e-test" || true
+          git commit -am "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
           git branch temporary-work
           git checkout $GITHUB_BASE_REF
-          git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test" || true
+          git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
 
       - name: version & publish
         run: |
@@ -53,5 +53,5 @@ jobs:
       - name: finish the commit
         run: |
           git add .
-          git commit -am "final commit $GITHUB_REF_NAME by e2e-test" || true
+          git commit -am "final commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
           git push || true
