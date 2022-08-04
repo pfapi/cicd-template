@@ -1,6 +1,6 @@
 {
   "name": "@pfapi/cicd-test-three",
-  "version": "1.0.9",
+  "version": "1.0.10-beta.0",
   "description": "ci/cd test three",
   "main": "src/index.js",
   "bugs": {
@@ -11,14 +11,13 @@
     "url": "git@github.com:pfapi/cicd-test.git"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha --timeout 10000 --exit --reporter spec tests/test-*",
-    "genPackagelock": "npm i --package-lock-only"
+    "test": "NODE_ENV=test mocha --timeout 10000 --exit --reporter spec tests/test-*"
   },
   "author": "Sam Wen",
   "license": "MIT",
   "dependencies": {
-    "@pfapi/cicd-test-one": "^1.0.9",
-    "@pfapi/cicd-test-two": "^1.0.9",
+    "@pfapi/cicd-test-one": "^1.0.10-beta.0",
+    "@pfapi/cicd-test-two": "^1.0.10-beta.0",
     "chai": "^4.3.6",
     "mocha": "^10.0.0"
   }
