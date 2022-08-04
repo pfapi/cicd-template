@@ -32,7 +32,7 @@ jobs:
           git checkout main
           /tmp/apply-files
           git add .
-          git commit -m "sync changed files by to-release" || true
+          git commit -m "sync changed files by $GITHUB_JOB" || true
           git push || true
 
       - name: create pull request
