@@ -20,7 +20,7 @@ fi
 
 [ -z "$API_URL" ] && API_URL="https://api.github.com/repos/pfapi/cicd-test"
 
-curl -X PUT $API_URL/branches/main/protection \
+curl -s -X PUT $API_URL/branches/main/protection \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: token $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
