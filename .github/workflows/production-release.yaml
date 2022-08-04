@@ -14,6 +14,8 @@ jobs:
 
   production-release:
 
+    if: github.base_ref == 'development'
+     
     timeout-minutes: 15
 
     runs-on: ubuntu-latest
