@@ -1,5 +1,10 @@
 name: to release
 on:
+  push:
+    branches:
+      - development
+    paths:
+      - 'to-release.json'
   workflow_dispatch
 
 jobs:
@@ -20,13 +25,14 @@ jobs:
       - name: setup
         run: |
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
-          echo "GITHUB_TOKEN=${{ secrets.ACCESS_PASS }}" >> $GITHUB_ENV
+          echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
       - name: sync changed files
         run: |
           git checkout development
+          [ -f to-release.json ] && rm to-release.json
           bin/save-files
           cp bin/apply-files /tmp
           git checkout main

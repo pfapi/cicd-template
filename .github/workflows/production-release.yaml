@@ -58,7 +58,7 @@ jobs:
           npx lerna version --conventional-commits --conventional-graduate --create-release=github --yes
           npx lerna publish from-git --yes --dist-tag latest
         env:
-            GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: update lerna.json version to development
         run: |

@@ -56,7 +56,7 @@ jobs:
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
           npx lerna publish from-git --yes --dist-tag beta
         env:
-            GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: finish the commit
         run: |
