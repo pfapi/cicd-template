@@ -3,10 +3,7 @@ on:
   pull_request:
     branches:
       - development
-    paths-ignore:
-      - '.github/**'
-      - '**.md'
-      - 'images/**'
+
 jobs:
 
   e2e-tests:
