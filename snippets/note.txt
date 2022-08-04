@@ -26,3 +26,13 @@ git merge $TMP_BRANCH_NAME -m "merge $TMP_BRANCH_NAME by pfapi"
 git branch -d $TMP_BRANCH_NAME
 
 git push origin --delete $TMP_BRANCH_NAME
+
+
+let response = await octokit.request('POST /repos/<OWNER>/<REPO>/pulls', {
+owner: '<YOUR-USER-NAME>',
+repo: '<YOUR-REPO-NAME>',
+title: '<SOME-TITLE>',
+body: '<SOME-DESCRIPTION>',
+head: '<YOUR-SOURCE-BRANCH>',
+base: '<THE-DESTINATION-BRANCH>'
+});
