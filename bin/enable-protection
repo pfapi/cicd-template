@@ -1,8 +1,26 @@
 #!/usr/bin/env bash
 
+# - name: setup
+#   run: |
+#     echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
+#     echo "GITHUB_TOKEN=${{ secrets.ACCESS_PASS }}" >> $GITHUB_ENV
+#
+# - name: turn on protection
+#   if: always()
+#   run: [ "${{ github.ref_protected }}" == "true" ] && bin/enable-protection
+
 [ -z "$GITHUB_ENV" ] || . $GITHUB_ENV
 
-curl -X PUT https://api.github.com/repos/pfapi/cicd-test/branches/main/protection \
+if [ -z "$GITHUB_TOKEN" ]; then
+  echo "GITHUB_TOKEN is not setup"
+  exit 1
+fi
+
+[ -z "$BRANCH" ] && BRANCH="main";
+
+[ -z "$API_URL" ] && API_URL="https://api.github.com/repos/pfapi/cicd-test"
+
+curl -X PUT $API_URL/branches/main/protection \
   -H "Accept: application/vnd.github.luke-cage-preview+json" \
   -H "Authorization: token $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \

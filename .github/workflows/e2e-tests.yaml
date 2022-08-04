@@ -27,10 +27,11 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      - name: setup git config & npm
+      - name: setup
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git config advice.detached head false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
       - name: install dependencies
@@ -44,13 +45,12 @@ jobs:
 
       - name: commit and merge into GITHUB_BASE_REF
         run: |
-          git config advice.detached head false
           git add .
           git commit -am "commit $GITHUB_REF_NAME by e2e-test" || true
           git branch temporary-work
           git checkout $GITHUB_BASE_REF
           git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test" || true
-      
+
       - name: version & publish
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
