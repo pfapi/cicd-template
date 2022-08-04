@@ -1,11 +1,11 @@
 name: to release
 on:
-  workflow_dispatch
-  push
-    branches
+  push:
+    branches:
       - development
-    paths
-      - to-release.json
+    paths:
+      - "to-release.json"
+  workflow_dispatch:
 
 jobs:
 
