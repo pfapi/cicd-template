@@ -13,8 +13,27 @@ jobs:
 
     steps:
 
+      - name: check if issues opened
+        if: github.event_name == 'issues' && github.repository_owner == github.actor && startsWith( github.event.issue.title, 'to-release' )
+        run: |
+          echo "TITLE=${{ github.event.issue.title }}" >> $GITHUB_ENV
+          echo "ISSUE_URL=${{ github.event.issue.url }}" >> $GITHUB_ENV
+
+      - name: get OK
+        run: |
+          OK=true
+          [ "GITHUB_EVENT_NAME" == 'issues'] && [ -z "$TITLE" ] && OK=false
+          echo "OK=$OK" >> $GITHUB_ENV
+      
+      - name: check if OK
+        if: env.OK == true
+        run: echo "OK"
+
       - name: print env
         run: env
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
       - name: Dump GitHub context - github.event.issue.author_association
         run: echo '${{ github.event.issue.author_association }}'
       - name: Dump GitHub context - github.event.issue.user.login

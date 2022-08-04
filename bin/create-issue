@@ -5,7 +5,7 @@
 #     echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
 #     echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
 
-# - name: create pull request
+# - name: create an issue
 #   run: |
 #     echo "TITLE='my title'" >> $GITHUB_ENV
 #     bin/create-issue
@@ -26,7 +26,7 @@ fi
 
 [ -z "$API_URL" ] && API_URL="https://api.github.com/repos/pfapi/cicd-test"
 
-curl -X POST $API_URL/issues \
+curl -s -X POST $API_URL/issues \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: token $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \

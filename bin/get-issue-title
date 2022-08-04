@@ -4,10 +4,13 @@
 #   run: |
 #     echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
 
-# - name: close the issue
+# - name: get issue title
 #   run: |
+#     for an issue
 #     echo "ISSUE_URL=${{ github.event.issue.url }}" >> $GITHUB_ENV
-#     bin/close-issue
+#     for pull request
+#     echo "ISSUE_URL=${{ github.api_url }}/repos/${{ github.repository }}/issues/${{ github.event.number }}" >> $GITHUB_ENV
+#     echo "TITLE=$(bin/get-issue-title)" >> $GITHUB_ENV
 
 [ -z "$GITHUB_ENV" ] || . $GITHUB_ENV
 
@@ -21,12 +24,7 @@ if [ -z "$ISSUE_URL" ]; then
   exit 1
 fi
 
-curl -s -X PATCH $ISSUE_URL \
+curl -s -X GET $ISSUE_URL \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: token $GITHUB_TOKEN" \
-  -H "Content-Type: application/json" \
-  --data-binary @- <<DATA
-{
-"state": "closed"
-}
-DATA
+  | grep "title" | awk 'BEGIN { FS = "\"" } ; {print $4}'

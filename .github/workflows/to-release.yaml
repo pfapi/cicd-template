@@ -1,6 +1,8 @@
 name: to release
 on:
   workflow_dispatch:
+  issues:
+    types: [ opened ]
 
 jobs:
 
@@ -12,12 +14,26 @@ jobs:
 
     steps:
 
+      - name: check if issues opened
+        if: github.event_name == 'issues' && github.repository_owner == github.actor && startsWith( github.event.issue.title, 'to-release' )
+        run: |
+          echo "TITLE=${{ github.event.issue.title }}" >> $GITHUB_ENV
+          echo "ISSUE_URL=${{ github.event.issue.url }}" >> $GITHUB_ENV
+
+      - name: get OK
+        run: |
+          OK=true
+          [ "GITHUB_EVENT_NAME" == 'issues'] && [ -z "$TITLE" ] && OK=false
+          echo "OK=$OK" >> $GITHUB_ENV
+  
       - name: Checkout
+        if: env.OK == 'true' 
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
       - name: setup
+        if: env.OK == 'true' 
         run: |
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
           echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
@@ -25,6 +41,7 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
       - name: sync changed files
+        if: env.OK == 'true' 
         run: |
           git checkout development
           bin/save-files
@@ -32,10 +49,11 @@ jobs:
           git checkout main
           /tmp/apply-files
           git add .
-          git commit -m "sync changed files by to-release" || true
+          git commit -m "sync changed files by $GITHUB_JOB" || true
           git push || true
 
       - name: create pull request
+        if: env.OK == 'true' 
         run: |
           git checkout development
           bin/create-pr
