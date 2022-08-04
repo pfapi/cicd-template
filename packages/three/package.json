@@ -1,6 +1,6 @@
 {
   "name": "@pfapi/cicd-test-three",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "ci/cd test three",
   "main": "src/index.js",
   "bugs": {
