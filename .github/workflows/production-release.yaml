@@ -55,6 +55,7 @@ jobs:
       - name: get BUMP from title
         run: |
           TITLE=$(bin/get-issue-title)
+          echo "TITLE=$TITLE"
           BUMP=patch
           [[ "$TITLE" == *minor ]] && BUMP=minor
           [[ "$TITLE" == *major ]] && BUMP=major
