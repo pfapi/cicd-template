@@ -20,10 +20,10 @@ jobs:
           echo "ISSUE_URL=${{ github.event.issue.url }}" >> $GITHUB_ENV
 
       - name: get OK
-          run:
-            OK=true
-            [ "GITHUB_EVENT_NAME" == 'issues'] && [ -z "$TITLE" ] && OK=false
-            echo "OK=$OK" >> $GITHUB_ENV
+        run: |
+          OK=true
+          [ "GITHUB_EVENT_NAME" == 'issues'] && [ -z "$TITLE" ] && OK=false
+          echo "OK=$OK" >> $GITHUB_ENV
       
       - name: check if OK
         if: env.OK == true
