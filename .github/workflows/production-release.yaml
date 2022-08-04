@@ -8,10 +8,6 @@ on:
       - reopened
       - synchronize
       - edited
-    paths-ignore:
-      - '.github/**'
-      - '**.md'
-      - 'images/**'
   workflow_dispatch:
 
 jobs:
