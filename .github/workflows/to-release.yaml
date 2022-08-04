@@ -1,6 +1,10 @@
 name: to release
 on:
+  push:
+    tags:
+      - 'release/*'
   workflow_dispatch
+  
 jobs:
 
   to-release:
@@ -16,8 +20,9 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      - name: setup git config
+      - name: setup API_URL & git config
         run: |
+          echo "API_URL=${{ github.url }}" >> $GITHUB_ENV
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
 
@@ -25,9 +30,12 @@ jobs:
         run: |
           git checkout development
           bin/save-files
-          cp -pr bin/apply-files /tmp
+          cp bin/apply-files /tmp
           git checkout main
           /tmp/apply-files
           git add .
           git commit -m "sync changed files by to-release" || true
           git push || true
+
+      - name: create pull request
+        run: /bin/create-pr

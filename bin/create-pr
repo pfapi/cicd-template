@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+[ -z "$GITHUB_ENV" ] || . $GITHUB_ENV
+
+owner=$(basename $(dirname $API_URL))
+repo=$(basename $API_URL)
+
+echo $owner $repo
+
+curl -X POST $API_URL/pulls \
+  -H "Accept: application/vnd.github.luke-cage-preview+json" \
+  -H "Authorization: token $GITHUB_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data-binary @- <<DATA
+{
+"owner": "$owner",
+"repo": "$repo",
+"title": "merge into main to release",
+"body": "released by $GITHUB_TRIGGERING_ACTOR @ $(date)",
+"head": "development",
+"base": "main"
+}
+DATA
+
