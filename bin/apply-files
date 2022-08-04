@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+[ -f /tmp/development/lerna.json ] && cp  /tmp/development/lerna.json .
 [ -f /tmp/development/CHANGELOG.md ] && cp /tmp/development/CHANGELOG.md .
 [ -f /tmp/development/package.json ] && cp /tmp/development/package.json .
 [ -f /tmp/development/package-lock.json ] && cp /tmp/development/package-lock.json .

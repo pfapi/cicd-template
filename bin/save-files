@@ -3,6 +3,7 @@
 rm -rf /tmp/development
 mkdir /tmp/development
 
+[ -f lerna.json ] && cp lerna.json /tmp/development
 [ -f CHANGELOG.md ] && cp CHANGELOG.md /tmp/development
 [ -f package.json ] && cp package.json /tmp/development
 [ -f package-lock.json ] && cp package-lock.json /tmp/development
