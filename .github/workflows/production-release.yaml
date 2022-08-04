@@ -35,6 +35,9 @@ jobs:
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           echo "ISSUE_URL=${{ github.api_url }}/repos/${{ github.repository }}/issues/${{ github.event.number }}" >> $GITHUB_ENV
 
+      - name: get BUMP from pr title
+        run: bin/get-pr-bump
+        
       - name: install dependencies
         run: npm install
 
@@ -51,15 +54,6 @@ jobs:
           git branch temporary-work
           git checkout $GITHUB_BASE_REF 
           git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
-      
-      - name: get BUMP from title
-        run: |
-          TITLE=$(bin/get-issue-title)
-          echo "TITLE=$TITLE"
-          BUMP=patch
-          [[ "$TITLE" == *minor ]] && BUMP=minor
-          [[ "$TITLE" == *major ]] && BUMP=major
-          echo "BUMP=$BUMP" >> $GITHUB_ENV
 
       - name: version & publish
         run: |
