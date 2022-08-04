@@ -19,13 +19,10 @@ jobs:
 
       - name: setup
         run: |
-          echo "API_URL=${{ github.api_url }}" >> $GITHUB_ENV
+          echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
           echo "GITHUB_TOKEN=${{ secrets.ACCESS_PASS }}" >> $GITHUB_ENV
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: check $GITHUB_ENV
-        run: cat $GITHUB_ENV
 
       - name: sync changed files
         run: |
