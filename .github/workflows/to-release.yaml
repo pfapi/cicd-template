@@ -2,7 +2,7 @@ name: to release
 on:
   workflow_dispatch:
   issues:
-    - opened
+    types: [ opened ]
 
 jobs:
 
