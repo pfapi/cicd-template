@@ -22,7 +22,7 @@ jobs:
       - name: get OK
         run: |
           OK=true
-          [ "GITHUB_EVENT_NAME" == 'issues'] && [ -z "$TITLE" ] && OK=false
+          [ "GITHUB_EVENT_NAME" == 'issues' ] && [ -z "$TITLE" ] && OK=false
           echo "OK=$OK" >> $GITHUB_ENV
       
       - name: check if OK
