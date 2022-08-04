@@ -19,6 +19,7 @@ jobs:
         run: |
           echo "TITLE=${{ github.event.issue.title }}" >> $GITHUB_ENV
           echo "ISSUE_URL=${{ github.event.issue.url }}" >> $GITHUB_ENV
+          echo $TITLE $ISSUE_URL
 
       - name: get OK
         run: |
@@ -57,3 +58,7 @@ jobs:
         run: |
           git checkout development
           bin/create-pr
+
+      - name: close issue
+        if: env.OK == 'true' && github.event_name == 'issues'
+        run: bin/close-issue

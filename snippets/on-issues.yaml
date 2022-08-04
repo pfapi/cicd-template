@@ -1,7 +1,7 @@
 name: on issues
 on:
   issues:
-    types: [opened, milestoned]
+    types: [opened]
 
 jobs:
 
