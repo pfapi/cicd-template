@@ -7,5 +7,5 @@
 for d in packages/* ; do 
     [ -f /tmp/development/$d/package.json ] && cp /tmp/development/$d/package.json $d
     [ -f /tmp/development/$d/package-lock.json ] && cp /tmp/development/$d/package-lock.json $d
-    [ -f cp /tmp/development/$d/CHANGELOG.md ] && cp /tmp/development/$d/CHANGELOG.md $d
+    [ -f /tmp/development/$d/CHANGELOG.md ] && cp /tmp/development/$d/CHANGELOG.md $d
 done

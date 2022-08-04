@@ -11,5 +11,5 @@ for d in packages/* ; do
     mkdir -p /tmp/development/$d
     [ -f $d/package.json ] && cp $d/package.json /tmp/development/$d
     [ -f $d/package-lock.json ] && cp $d/package-lock.json /tmp/development/$d
-    [ -f cp $d/CHANGELOG.md ] && cp $d/CHANGELOG.md /tmp/development/$d
+    [ -f $d/CHANGELOG.md ] && cp $d/CHANGELOG.md /tmp/development/$d
 done
