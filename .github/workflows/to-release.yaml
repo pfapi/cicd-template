@@ -4,7 +4,7 @@ on:
     tags:
       - 'release/*'
   workflow_dispatch
-  
+
 jobs:
 
   to-release:
@@ -38,4 +38,4 @@ jobs:
           git push || true
 
       - name: create pull request
-        run: /bin/create-pr
+        run: bin/create-pr
