@@ -25,7 +25,9 @@ jobs:
           echo "startsWith( github.event.issue.title, 'to-release' ) = ${{ startsWith( github.event.issue.title, 'to-release' ) }}"
   
       - name: check if issues opened
-        if: github.event_name == 'issues' && github.repository_owner == github.actor && startsWith( github.event.issue.title, 'to-release' )
+        if: github.event_name == 'issues' 
+        if: github.repository_owner == github.actor
+        if: startsWith( github.event.issue.title, 'to-release' ))
         run: |
           echo "TITLE=${{ github.event.issue.title }}" >> $GITHUB_ENV
           echo "ISSUE_URL=${{ github.event.issue.url }}" >> $GITHUB_ENV
