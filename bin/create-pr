@@ -3,7 +3,7 @@
 # - name: setup
 #   run: |
 #     echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
-#     echo "GITHUB_TOKEN=${{ secrets.ACCESS_PASS }}" >> $GITHUB_ENV
+#     echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
 
 # - name: create pull request
 #   run: |
@@ -22,10 +22,8 @@ fi
 owner=$(basename $(dirname $API_URL))
 repo=$(basename $API_URL)
 
-echo $owner $repo
-
 curl -X POST $API_URL/pulls \
-  -H "Accept: application/vnd.github.luke-cage-preview+json" \
+  -H "Accept: application/vnd.github+json" \
   -H "Authorization: token $GITHUB_TOKEN" \
   -H "Content-Type: application/json" \
   --data-binary @- <<DATA
