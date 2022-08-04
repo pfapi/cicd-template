@@ -3,8 +3,6 @@
 rm -rf /tmp/development
 mkdir /tmp/development
 
-cp lerna.json /tmp/development
-
 for d in packages/* ; do 
     mkdir -p /tmp/development/$d
     cp $d/package.json /tmp/development/$d
