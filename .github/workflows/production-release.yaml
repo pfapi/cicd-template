@@ -14,18 +14,14 @@ jobs:
 
   production-release:
 
+    if: github.head_ref == 'development'
+     
     timeout-minutes: 15
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Dump env
-        run: env
-      - name: Dump GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
-        
       - name: Checkout
         uses: actions/checkout@v3
         with:

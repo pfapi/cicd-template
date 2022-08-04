@@ -3,11 +3,11 @@ GOROOT_1_17_X64=/opt/hostedtoolcache/go/1.17.12/x64
 CONDA=/usr/share/miniconda
 GITHUB_WORKSPACE=/home/runner/work/cicd-test/cicd-test
 JAVA_HOME_11_X64=/usr/lib/jvm/temurin-11-jdk-amd64
-GITHUB_PATH=/home/runner/work/_temp/_runner_file_commands/add_path_c46513a3-92c1-4ed8-a744-5c28a763d816
+GITHUB_PATH=/home/runner/work/_temp/_runner_file_commands/add_path_1470cf61-4332-439e-999d-9cce8dde6d4e
 GITHUB_ACTION=__run
 JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64
 GITHUB_RUN_NUMBER=13
-RUNNER_NAME=Hosted Agent
+RUNNER_NAME=GitHub Actions 2
 GRADLE_HOME=/usr/share/gradle-7.5
 XDG_CONFIG_HOME=/home/runner/.config
 DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
@@ -24,73 +24,214 @@ PIPX_BIN_DIR=/opt/pipx_bin
 DEPLOYMENT_BASEPATH=/opt/runner
 GITHUB_ACTIONS=true
 ANDROID_NDK_LATEST_HOME=/usr/local/lib/android/sdk/ndk/25.0.8775105
-GITHUB_SHA=04adeca1b534e740966491f075b3438e957b8fd6
+GITHUB_SHA=6d318e6db70257d26ab988eb56e215b03388789d
 POWERSHELL_DISTRIBUTION_CHANNEL=GitHub-Actions-ubuntu20
 DOTNET_MULTILEVEL_LOOKUP=0
-GITHUB_REF=refs/pull/19/merge
+GITHUB_REF=refs/pull/74/merge
 RUNNER_OS=Linux
 GITHUB_REF_PROTECTED=false
 HOME=/home/runner
 GITHUB_API_URL=https://api.github.com
 LANG=C.UTF-8
-RUNNER_TRACKING_ID=github_5bed8a4a-fdc5-43e6-a50b-b104aa80c351
+RUNNER_TRACKING_ID=github_4f86348f-56e3-4908-9406-7adb01cd5cfe
+STATS_KEEPALIVE=false
 RUNNER_ARCH=X64
 RUNNER_TEMP=/home/runner/work/_temp
 EDGEWEBDRIVER=/usr/local/share/edge_driver
-GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/set_env_c46513a3-92c1-4ed8-a744-5c28a763d816
+GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/set_env_1470cf61-4332-439e-999d-9cce8dde6d4e
 GITHUB_EVENT_PATH=/home/runner/work/_temp/_github_workflow/event.json
-INVOCATION_ID=654bbc9cb3b946ac9728142cd65f4a29
+INVOCATION_ID=d1a39d1d0ce948279e4ebd2cd05b980f
 GITHUB_EVENT_NAME=pull_request
-GITHUB_RUN_ID=2789377218
+GITHUB_RUN_ID=2797910753
 JAVA_HOME_17_X64=/usr/lib/jvm/temurin-17-jdk-amd64
+ANDROID_NDK_HOME=/usr/local/lib/android/sdk/ndk/25.0.8775105
+GITHUB_STEP_SUMMARY=/home/runner/work/_temp/_runner_file_commands/step_summary_1470cf61-4332-439e-999d-9cce8dde6d4e
+HOMEBREW_NO_AUTO_UPDATE=1
+GITHUB_ACTOR=pfapi
+NVM_DIR=/home/runner/.nvm
+SGX_AESM_ADDR=1
+GITHUB_RUN_ATTEMPT=1
+ANDROID_HOME=/usr/local/lib/android/sdk
+GITHUB_GRAPHQL_URL=https://api.github.com/graphql
+RUNNER_USER=runner
+ACCEPT_EULA=Y
+USER=runner
+GITHUB_SERVER_URL=https://github.com
+HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
+PIPX_HOME=/opt/pipx
+GECKOWEBDRIVER=/usr/local/share/gecko_driver
+CHROMEWEBDRIVER=/usr/local/share/chrome_driver
+SHLVL=1
+ANDROID_SDK_ROOT=/usr/local/lib/android/sdk
+VCPKG_INSTALLATION_ROOT=/usr/local/share/vcpkg
+HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
+RUNNER_TOOL_CACHE=/opt/hostedtoolcache
+ImageVersion=20220729.1
+DOTNET_NOLOGO=1
+STATS_PT=20
+GITHUB_REF_NAME=74/merge
+STATS_PFS=true
+GRAALVM_11_ROOT=/usr/local/graalvm/graalvm-ce-java11-22.2.0
+GITHUB_JOB=production-release
+XDG_RUNTIME_DIR=/run/user/1001
+AZURE_EXTENSION_DIR=/opt/az/azcliextensions
+PERFLOG_LOCATION_SETTING=RUNNER_PERFLOG
+GITHUB_REPOSITORY=pfapi/cicd-test
+ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/25.0.8775105
+CHROME_BIN=/usr/bin/google-chrome
+GOROOT_1_18_X64=/opt/hostedtoolcache/go/1.18.4/x64
+GITHUB_RETENTION_DAYS=90
+JOURNAL_STREAM=8:22026
+RUNNER_WORKSPACE=/home/runner/work/cicd-test
+LEIN_HOME=/usr/local/lib/lein
+LEIN_JAR=/usr/local/lib/lein/self-installs/leiningen-2.9.8-standalone.jar
+GITHUB_ACTION_REPOSITORY=
+PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+RUNNER_PERFLOG=/home/runner/perflog
+GITHUB_BASE_REF=main
+CI=true
+SWIFT_PATH=/usr/share/swift/usr/bin
+ImageOS=ubuntu20
+GITHUB_REPOSITORY_OWNER=pfapi
+GITHUB_HEAD_REF=development
+GITHUB_ACTION_REF=
+GITHUB_WORKFLOW=production release
+DEBIAN_FRONTEND=noninteractive
+AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
+GOROOT_1_16_X64=/opt/hostedtoolcache/go/1.16.15/x64
+_=/usr/bin/env
+
+{
+  "token": "***",
+  "job": "production-release",
+  "ref": "refs/pull/74/merge",
+  "sha": "6d318e6db70257d26ab988eb56e215b03388789d",
+  "repository": "pfapi/cicd-test",
+  "repository_owner": "pfapi",
+  "repository_owner_id": "109823601",
+  "repositoryUrl": "git://github.com/pfapi/cicd-test.git",
+  "run_id": "2797910753",
+  "run_number": "13",
+  "retention_days": "90",
+  "run_attempt": "1",
+  "artifact_cache_size_limit": "10",
+  "repository_visibility": "public",
+  "repository_id": "520647722",
+  "actor_id": "109823601",
+  "actor": "pfapi",
+  "triggering_actor": "pfapi",
+  "workflow": "production release",
+  "head_ref": "development",
+  "base_ref": "main",
+  "event_name": "pull_request",
+  "event": {
+    "action": "opened",
+    "number": 74,
+    "pull_request": {
+      "_links": {
+        "comments": {
+          "href": "https://api.github.com/repos/pfapi/cicd-test/issues/74/comments"
+        },
+        "commits": {
+          "href": "https://api.github.com/repos/pfapi/cicd-test/pulls/74/commits"
+        },
+        "html": {
+          "href": "https://github.com/pfapi/cicd-test/pull/74"
+        },
+        "issue": {
+          "href": "https://api.github.com/repos/pfapi/cicd-test/issues/74"
+        },
+        "review_comment": {
+          "href": "https://api.github.com/repos/pfapi/cicd-test/pulls/comments{/number}"
+        },
+        "review_comments": {
+          "href": "https://api.github.com/repos/pfapi/cicd-test/pulls/74/comments"
+        },
+        "self": {
+          "href": "https://api.github.com/repos/pfapi/cicd-test/pulls/74"
+        },
+        "statuses": {
+          "href": "https://api.github.com/repos/pfapi/cicd-test/statuses/4ae190fe545b61d8745ca3471ce559b83152bb01"
+        }
+      },
+      "active_lock_reason": null,
+      "additions": 53,
+      "assignee": null,
+      "assignees": [],
+      "author_association": "OWNER",
+      "auto_merge": null,
+      "base": {
+        "label": "pfapi:main",
+        "ref": "main",
+        "repo": {
+        "login": "pfapi",
+        "node_id": "U_kgDOBovGcQ",
+        "organizations_url": "https://api.github.com/users/pfapi/orgs",
+        "received_events_url": "https://api.github.com/users/pfapi/received_events",
+        "repos_url": "https://api.github.com/users/pfapi/repos",
+        "site_admin": false,
+        "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
+        "type": "User",
+        "url": "https://api.github.com/users/pfapi"
+      },
+      "private": false,
+      "pulls_url": "https://api.github.com/repos/pfapi/cicd-test/pulls{/number}",
+      "pushed_at": "2022-08-04T15:47:57Z",
+      "releases_url": "https://api.github.com/repos/pfapi/cicd-test/releases{/id}",
+      "size": 476,
+      "ssh_url": "git@github.com:pfapi/cicd-test.git",
+      "stargazers_count": 0,
+      "stargazers_url": "https://api.github.com/repos/pfapi/cicd-test/stargazers",
+      "statuses_url": "https://api.github.com/repos/pfapi/cicd-test/statuses/{sha}",
+      "subscribers_url": "https://api.github.com/repos/pfapi/cicd-test/subscribers",
+      "subscription_url": "https://api.github.com/repos/pfapi/cicd-test/subscription",
+      "svn_url": "https://github.com/pfapi/cicd-test",
+      "tags_url": "https://api.github.com/repos/pfapi/cicd-test/tags",
+      "teams_url": "https://api.github.com/repos/pfapi/cicd-test/teams",
+      "topics": [],
+      "trees_url": "https://api.github.com/repos/pfapi/cicd-test/git/trees{/sha}",
+      "updated_at": "2022-08-03T03:13:46Z",
+      "url": "https://api.github.com/repos/pfapi/cicd-test",
+      "visibility": "public",
+      "watchers": 0,
+      "watchers_count": 0,
+      "web_commit_signoff_required": false
+    },
+    "sender": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/109823601?v=4",
+      "events_url": "https://api.github.com/users/pfapi/events{/privacy}",
+      "followers_url": "https://api.github.com/users/pfapi/followers",
+      "following_url": "https://api.github.com/users/pfapi/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pfapi/gists{/gist_id}",
+      "gravatar_id": "",
+      "html_url": "https://github.com/pfapi",
+      "id": 109823601,
+      "login": "pfapi",
+      "node_id": "U_kgDOBovGcQ",
+      "organizations_url": "https://api.github.com/users/pfapi/orgs",
+      "received_events_url": "https://api.github.com/users/pfapi/received_events",
       "repos_url": "https://api.github.com/users/pfapi/repos",
       "site_admin": false,
       "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
       "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
       "type": "User",
       "url": "https://api.github.com/users/pfapi"
-    },
-    "private": false,
-    "pulls_url": "https://api.github.com/repos/pfapi/cicd-test/pulls{/number}",
-    "pushed_at": "2022-08-03T12:25:02Z",
-    "releases_url": "https://api.github.com/repos/pfapi/cicd-test/releases{/id}",
-    "size": 371,
-    "ssh_url": "git@github.com:pfapi/cicd-test.git",
-    "stargazers_count": 0,
-    "stargazers_url": "https://api.github.com/repos/pfapi/cicd-test/stargazers",
-    "statuses_url": "https://api.github.com/repos/pfapi/cicd-test/statuses/{sha}",
-    "subscribers_url": "https://api.github.com/repos/pfapi/cicd-test/subscribers",
-    "subscription_url": "https://api.github.com/repos/pfapi/cicd-test/subscription",
-    "svn_url": "https://github.com/pfapi/cicd-test",
-    "tags_url": "https://api.github.com/repos/pfapi/cicd-test/tags",
-    "teams_url": "https://api.github.com/repos/pfapi/cicd-test/teams",
-    "topics": [],
-    "trees_url": "https://api.github.com/repos/pfapi/cicd-test/git/trees{/sha}",
-    "updated_at": "2022-08-03T03:13:46Z",
-    "url": "https://api.github.com/repos/pfapi/cicd-test",
-    "visibility": "public",
-    "watchers": 0,
-    "watchers_count": 0,
-    "web_commit_signoff_required": false
+    }
   },
-  "sender": {
-    "avatar_url": "https://avatars.githubusercontent.com/u/109823601?v=4",
-    "events_url": "https://api.github.com/users/pfapi/events{/privacy}",
-    "followers_url": "https://api.github.com/users/pfapi/followers",
-    "following_url": "https://api.github.com/users/pfapi/following{/other_user}",
-    "gists_url": "https://api.github.com/users/pfapi/gists{/gist_id}",
-    "gravatar_id": "",
-    "html_url": "https://github.com/pfapi",
-    "id": 109823601,
-    "login": "pfapi",
-    "node_id": "U_kgDOBovGcQ",
-    "organizations_url": "https://api.github.com/users/pfapi/orgs",
-    "received_events_url": "https://api.github.com/users/pfapi/received_events",
-    "repos_url": "https://api.github.com/users/pfapi/repos",
-    "site_admin": false,
-    "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
-    "type": "User",
-    "url": "https://api.github.com/users/pfapi"
-  }
+  "server_url": "https://github.com",
+  "api_url": "https://api.github.com",
+  "graphql_url": "https://api.github.com/graphql",
+  "ref_name": "74/merge",
+  "ref_protected": false,
+  "ref_type": "branch",
+  "secret_source": "Actions",
+  "workspace": "/home/runner/work/cicd-test/cicd-test",
+  "action": "github_context_step",
+  "event_path": "/home/runner/work/_temp/_github_workflow/event.json",
+  "action_repository": "",
+  "action_ref": "",
+  "path": "/home/runner/work/_temp/_runner_file_commands/add_path_233c1e8d-60e9-4a04-9c48-64649c5f7012",
+  "env": "/home/runner/work/_temp/_runner_file_commands/set_env_233c1e8d-60e9-4a04-9c48-64649c5f7012",
+  "step_summary": "/home/runner/work/_temp/_runner_file_commands/step_summary_233c1e8d-60e9-4a04-9c48-64649c5f7012"
 }
