@@ -35,4 +35,6 @@ jobs:
           git push || true
 
       - name: create pull request
-        run: bin/create-pr
+        run: |
+          git checkout development
+          bin/create-pr
