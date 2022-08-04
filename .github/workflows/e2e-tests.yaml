@@ -26,11 +26,6 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      # - name: show info
-      #   run: |
-      #     env
-      #     cat $GITHUB_EVENT_PATH
-
       - name: setup git config & npm
         run: |
           git config user.name "${{ github.actor }}"
@@ -51,8 +46,8 @@ jobs:
           git config advice.detached head false
           git add .
           git commit -am "commit $GITHUB_REF_NAME by e2e-test" || true
-          git branch temporary-work || true
-          git checkout $GITHUB_BASE_REF || true
+          git branch temporary-work
+          git checkout $GITHUB_BASE_REF
           git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test" || true
       
       - name: version & publish
@@ -61,3 +56,9 @@ jobs:
           npx lerna publish from-git --yes --dist-tag beta
         env:
             GH_TOKEN: ${{ secrets.ACCESS_PASS }}
+
+      - name: finish the commit
+        run: |
+          git add .
+          git commit -am "final commit $GITHUB_REF_NAME by e2e-test" || true
+          git push || true

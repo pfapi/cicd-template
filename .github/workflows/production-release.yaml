@@ -28,11 +28,6 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      # - name: show info
-      #   run: |
-      #     env
-      #     cat $GITHUB_EVENT_PATH
-
       - name: setup git config & npm
         run: |
           git config user.name "${{ github.actor }}"
