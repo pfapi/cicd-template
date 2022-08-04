@@ -27,7 +27,6 @@ jobs:
       - name: sync changed files
         run: |
           git checkout development
-          [ -f to-release.json ] && rm to-release.json
           bin/save-files
           cp bin/apply-files /tmp
           git checkout main
