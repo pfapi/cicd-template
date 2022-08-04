@@ -4,7 +4,7 @@ on:
     branches:
       - development
     paths:
-      - to-release.json
+      - 'to-release.json'
   workflow_dispatch:
 
 jobs:
