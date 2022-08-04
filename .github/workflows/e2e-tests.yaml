@@ -53,7 +53,7 @@ jobs:
           git commit -am "commit $GITHUB_REF_NAME by e2e-test" || true
           git branch temporary-work || true
           git checkout $GITHUB_BASE_REF || true
-          git merge temporary-work --squash -m "merge $GITHUB_REF_NAME by e2e-test" || true
+          git merge temporary-work -m "merge $GITHUB_REF_NAME by e2e-test" || true
       
       - name: version & publish
         run: |
