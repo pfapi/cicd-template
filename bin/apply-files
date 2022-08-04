@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-cp /tmp/development/lerna.json .
-
 for d in packages/* ; do 
     cp /tmp/development/$d/package.json $d
     cp /tmp/development/$d/package-lock.json $d
