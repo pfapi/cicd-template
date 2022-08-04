@@ -31,3 +31,9 @@ jobs:
           git add .
           git commit -m "sync changed files by to-release" || true
           git push || true
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          base: main
+          branch: development
