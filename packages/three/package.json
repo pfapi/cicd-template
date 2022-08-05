@@ -1,6 +1,6 @@
 {
   "name": "@pfapi/cicd-test-three",
-  "version": "2.5.2-beta.0",
+  "version": "2.6.3",
   "description": "ci/cd test three",
   "main": "src/index.js",
   "bugs": {
@@ -17,8 +17,8 @@
   "author": "Sam Wen",
   "license": "MIT",
   "dependencies": {
-    "@pfapi/cicd-test-one": "2.5.2-beta.0",
-    "@pfapi/cicd-test-two": "2.5.2-beta.0",
+    "@pfapi/cicd-test-one": "2.6.3",
+    "@pfapi/cicd-test-two": "2.6.3",
     "chai": "^4.3.6",
     "mocha": "^10.0.0"
   }
