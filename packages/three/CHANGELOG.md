@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/pfapi/cicd-test/compare/v2.6.0...v2.6.1) (2022-08-05)
+
+**Note:** Version bump only for package @pfapi/cicd-test-three
+
+
+
+
+
 ## [2.5.2-beta.0](https://github.com/pfapi/cicd-test/compare/v2.5.1-beta.0...v2.5.2-beta.0) (2022-08-05)
 
 **Note:** Version bump only for package @pfapi/cicd-test-three
