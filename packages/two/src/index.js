@@ -2,7 +2,7 @@
 
 module.exports = () => {
 
-    console.log('*** two is running! ***');
+    console.log('*** two is running! ****');
 
     return 'two';
 }
