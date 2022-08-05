@@ -16,20 +16,29 @@ Three simple node projects:
 ## Workflows
 
 1) when a pull request from a feature branch to development is submitted
+
     a) tests workflow runs automatically and will merge the code if the tests pass
+
     b) tests workflow publishes beta versioned npm packages.
 
 2) when a pull request from the development branch to main us submitted
+
     a) release workflow runs automatically and will merge the code if the tests pass
+
     b) release workflow publishes major.minor.patch versioned npm packages.
+
     c) release workflow also generate github release tagged with the version
 
 3) creating to-release issue
+
     a) when an issue title starts with to-release created, the to-release workflow is triggered.
+
     b) To avoid merge conflicts, to-release workflow syncs all lerna changed files between development and main branches.
+    
     c) to-release workflow closes the issue and create a pull request with the same title.
 
 4) title for to-release and pull request from development
+
     it can be to-release, to-release-patch, to-release-minor, to-release-major, to-release-1.2.3
     the last part is the bump option for lerna version
 
