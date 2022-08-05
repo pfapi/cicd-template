@@ -36,9 +36,6 @@ jobs:
           echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
           echo "ISSUE_URL=${{ github.api_url }}/repos/${{ github.repository }}/issues/${{ github.event.number }}" >> $GITHUB_ENV
 
-      - name: get BUMP from pr title
-        run: bin/get-pr-bump
-
       - name: install dependencies
         run: npm install
 
@@ -56,9 +53,12 @@ jobs:
           git checkout $GITHUB_BASE_REF 
           git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
 
+      - name: get BUMP from pull request title
+        run: bin/get-pr-bump
+
       - name: version & publish
         run: |
-          npx lerna version $BUMP --conventional-commits --conventional-graduate --create-release=github --yes
+          npx lerna version $BUMP --exact --conventional-commits --conventional-graduate --create-release=github --yes
           npx lerna publish from-git --yes --dist-tag latest
         env:
             GH_TOKEN: ${{ secrets.GH_TOKEN }}
