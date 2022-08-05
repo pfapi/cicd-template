@@ -11,7 +11,8 @@
     "url": "git@github.com:pfapi/cicd-test.git"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha --timeout 10000 --exit --reporter spec tests/test-*"
+    "test": "NODE_ENV=test mocha --timeout 10000 --exit --reporter spec tests/test-*",
+    "gen-package-lock": "npm i --package-lock-only"
   },
   "author": "Sam Wen",
   "license": "MIT",
