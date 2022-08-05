@@ -21,7 +21,7 @@ Three simple node projects:
 
     b) tests workflow publishes beta versioned npm packages.
 
-2) when a pull request from the development branch to main us submitted
+2) when a pull request from the development branch to the main is submitted
 
     a) release workflow runs automatically and will merge the code if the tests pass
 
@@ -37,11 +37,11 @@ Three simple node projects:
 
     c) to-release workflow closes the issue and create a pull request with the same title.
 
-4) title for to-release and pull request from development
+4) title for to-release and pull request from the development to the main
 
-    a) it can be to-release, to-release-patch, to-release-minor, to-release-major, to-release-1.2.3
+    a) if it is not started with to-release or exact as to-release, the default bump option for lerna version is patch.
 
-    b) the last part is the bump option for lerna version
+    b) if it is to-release-patch, to-release-minor, to-release-major, to-release-1.2.3, the last part is the bump option for lerna version
 
      
 
