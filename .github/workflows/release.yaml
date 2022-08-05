@@ -1,4 +1,5 @@
-name: production release
+name: release
+
 on: 
   pull_request:
     branches:
@@ -12,15 +13,19 @@ on:
 
 jobs:
 
-  production-release:
-
-    if: github.head_ref == 'development'
+  release:
      
     timeout-minutes: 15
 
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: only allow pull request from development
+        if: github.head_ref != 'development'
+        run: |
+          echo "pull request from ${{ github.head_ref }} is not allowed"
+          exit 1
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -48,7 +53,7 @@ jobs:
       - name: commit and merge into GITHUB_BASE_REF
         run: |
           git add .
-          git commit -am "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
+          git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
           git branch temporary-work
           git checkout $GITHUB_BASE_REF 
           git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
@@ -70,5 +75,5 @@ jobs:
           git pull
           cp /tmp/lerna.json .
           git add .
-          git commit -am "update lerna.json version by $GITHUB_JOB" || true
+          git commit -m "update lerna.json version by $GITHUB_JOB" || true
           git push || true

@@ -15,7 +15,7 @@ git checkout -b $TMP_BRANCH_NAME development
 
 git add .
 
-git commit -am "commit $TMP_BRANCH_NAME by pfapi"
+git commit -m "commit $TMP_BRANCH_NAME by pfapi"
 
 git push --set-upstream origin $TMP_BRANCH_NAME
 
