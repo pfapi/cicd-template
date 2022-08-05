@@ -19,7 +19,7 @@ Three simple node projects:
 
     a) tests workflow runs automatically and will merge the code if the tests pass
 
-    b) tests workflow publishes beta versioned npm packages.
+    b) tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
 2) when a pull request from the development branch to the main is submitted
 
