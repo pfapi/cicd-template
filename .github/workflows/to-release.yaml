@@ -14,16 +14,6 @@ jobs:
 
     steps:
 
-      - name: check conditions
-        run: |
-          echo "github.event_name = ${{ github.event_name }}"
-          echo "github.repository_owner = ${{ github.repository_owner }}"
-          echo "github.actor = ${{ github.actor }}"
-          echo "github.event.issue.title = ${{ github.event.issue.title }}"
-          echo "github.event_name == 'issues' = ${{  github.event_name == 'issues' }}"
-          echo "github.repository_owner == github.actor = ${{ github.repository_owner == github.actor }}"
-          echo "startsWith( github.event.issue.title, 'to-release' ) = ${{ startsWith( github.event.issue.title, 'to-release' ) }}"
-  
       - name: check if issues opened
         if: github.event_name == 'issues' && github.repository_owner == github.actor && startsWith( github.event.issue.title, 'to-release' )
         run: |
@@ -34,7 +24,7 @@ jobs:
       - name: get OK
         run: |
           OK=true
-          [ "GITHUB_EVENT_NAME" == 'issues' ] && [ -z "$TITLE" ] && OK=false
+          [ "$GITHUB_EVENT_NAME" == 'issues' ] && [ -z "$TITLE" ] && OK=false
           echo "OK=$OK" >> $GITHUB_ENV
   
       - name: Checkout
