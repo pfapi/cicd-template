@@ -34,13 +34,14 @@ Three simple node projects:
     a) when an issue title starts with to-release created, the to-release workflow is triggered.
 
     b) To avoid merge conflicts, to-release workflow syncs all lerna changed files between development and main branches.
-    
+
     c) to-release workflow closes the issue and create a pull request with the same title.
 
 4) title for to-release and pull request from development
 
-    it can be to-release, to-release-patch, to-release-minor, to-release-major, to-release-1.2.3
-    the last part is the bump option for lerna version
+    a) it can be to-release, to-release-patch, to-release-minor, to-release-major, to-release-1.2.3
+
+    b) the last part is the bump option for lerna version
 
      
 
