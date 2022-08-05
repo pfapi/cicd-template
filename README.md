@@ -1,6 +1,6 @@
 # cicd-test
 
-A test monorepo repo for ci/cd using lerna and github actions. The purpose of this project is to find common patterns and non-trivia nuaunces and to provide a smooth ci/cd experience template for monorepo project with lerna running on github.
+A test monorepo repo for ci/cd using lerna and github actions. The purpose of this project is to find the common patterns and non-trivia nuaunces and to provide a smooth ci/cd experience template for monorepo project with lerna running on github.
 
 Three simple node projects:
 
@@ -9,17 +9,17 @@ Three simple node projects:
 
 ## Branches
 
-* main - keeps the latest release and production code, only accept pull requests from development.
+* main - keeps the latest released and production code, only accept pull requests from the development.
 * development - keeps the latest development code, only accept pull requests from feature branches.
 * feature branches - where actual development works happen
 
 ## Workflows
 
-1) when a pull request from a feature branch to development is submitted
+1) when a pull request from a feature branch to the development is submitted
 
     a) tests workflow runs automatically and will merge the code if the tests pass
 
-    b) tests workflow publishes beta versioned npm packages.
+    b) tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
 2) when a pull request from the development branch to the main is submitted
 
@@ -37,7 +37,7 @@ Three simple node projects:
 
     c) to-release workflow closes the issue and create a pull request with the same title.
 
-4) title for to-release and pull request from the development to the main
+4) title for to-release issue and pull request from the development to the main
 
     a) if it is not started with to-release or exact as to-release, the default bump option for lerna version is patch.
 
