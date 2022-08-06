@@ -1,6 +1,6 @@
 # cicd-template
 
-A template monorepo repo for ci/cd using lerna and github actions. The purpose of this project is to find the common patterns and non-trivia nuaunces and to provide a smooth ci/cd experience template for monorepo project with lerna running on github.
+A template monorepo repo for ci/cd using lerna and github actions. The purpose of this project is to find the common patterns and non-trivial nuances for monorepo project with lerna running on github and to provide a smooth ci/cd experience template.
 
 Three simple node projects:
 
