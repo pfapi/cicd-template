@@ -1,6 +1,6 @@
 {
   "name": "@pfapi/cicd-test-one",
-  "version": "2.6.5",
+  "version": "2.6.6",
   "description": "ci/cd test one",
   "main": "src/index.js",
   "bugs": {

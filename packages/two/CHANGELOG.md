@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.6](https://github.com/pfapi/cicd-test/compare/v2.6.5...v2.6.6) (2022-08-06)
+
+
+
+## [2.6.4](https://github.com/pfapi/cicd-test/compare/v2.6.4-beta.0...v2.6.4) (2022-08-05)
+
+
+
+## [2.6.3](https://github.com/pfapi/cicd-test/compare/v2.6.2...v2.6.3) (2022-08-05)
+
+
+
+## [2.6.2](https://github.com/pfapi/cicd-test/compare/v2.6.1...v2.6.2) (2022-08-05)
+
+
+
+## [2.6.1](https://github.com/pfapi/cicd-test/compare/v2.6.0...v2.6.1) (2022-08-05)
+
+
+
+# [2.6.0](https://github.com/pfapi/cicd-test/compare/v2.5.2-beta.0...v2.6.0) (2022-08-05)
+
+
+
+## [2.5.1](https://github.com/pfapi/cicd-test/compare/v2.5.1-beta.0...v2.5.1) (2022-08-05)
+
+
+
+# [2.5.0](https://github.com/pfapi/cicd-test/compare/v1.0.20...v2.5.0) (2022-08-05)
+
+
+
+## [1.0.20](https://github.com/pfapi/cicd-test/compare/v1.0.19...v1.0.20) (2022-08-04)
+
+
+
+## [1.0.19](https://github.com/pfapi/cicd-test/compare/v1.0.18...v1.0.19) (2022-08-04)
+
+
+
+## [1.0.18](https://github.com/pfapi/cicd-test/compare/v1.0.17...v1.0.18) (2022-08-04)
+
+
+
+## [1.0.17](https://github.com/pfapi/cicd-test/compare/v1.0.16...v1.0.17) (2022-08-04)
+
+
+
+## [1.0.16](https://github.com/pfapi/cicd-test/compare/v1.0.15...v1.0.16) (2022-08-04)
+
+
+
+## [1.0.15](https://github.com/pfapi/cicd-test/compare/v1.0.14...v1.0.15) (2022-08-04)
+
+
+
+## [1.0.14](https://github.com/pfapi/cicd-test/compare/v1.0.13...v1.0.14) (2022-08-04)
+
+
+
+## [1.0.13](https://github.com/pfapi/cicd-test/compare/v1.0.12...v1.0.13) (2022-08-04)
+
+
+
+## [1.0.12](https://github.com/pfapi/cicd-test/compare/v1.0.12-beta.1...v1.0.12) (2022-08-04)
+
+
+
+## [1.0.11](https://github.com/pfapi/cicd-test/compare/v1.0.10...v1.0.11) (2022-08-04)
+
+
+
+## [1.0.10](https://github.com/pfapi/cicd-test/compare/v1.0.10-beta.0...v1.0.10) (2022-08-04)
+
+
+
+## [1.0.9](https://github.com/pfapi/cicd-test/compare/v1.0.9-beta.0...v1.0.9) (2022-08-04)
+
+**Note:** Version bump only for package @pfapi/cicd-test-two
+
+
+
+
+
 ## [2.6.5](https://github.com/pfapi/cicd-test/compare/v2.6.4-beta.0...v2.6.5) (2022-08-06)
 
 **Note:** Version bump only for package @pfapi/cicd-test-two
