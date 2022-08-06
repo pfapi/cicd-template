@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.5](https://github.com/pfapi/cicd-template/compare/v2.6.4-beta.0...v2.6.5) (2022-08-06)
+
+
+### Features
+
+* add collaborator requirement for auto merge ([8fdbd0a](https://github.com/pfapi/cicd-template/commit/8fdbd0aab9bd68576fea88d264bb198e90192225))
+
+
+
+
+
 ## [2.6.4-beta.0](https://github.com/pfapi/cicd-test/compare/v2.5.2-beta.0...v2.6.4-beta.0) (2022-08-05)
 
 **Note:** Version bump only for package cicd-test
