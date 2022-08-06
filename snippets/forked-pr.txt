@@ -1,18 +1,13 @@
-GITHUB_ACTOR=samswen
-GITHUB_BASE_REF=development
-GITHUB_REPOSITORY_OWNER=pfapi
-GITHUB_HEAD_REF=development
-
 SELENIUM_JAR_PATH=/usr/share/java/selenium-server.jar
 GOROOT_1_17_X64=/opt/hostedtoolcache/go/1.17.12/x64
 CONDA=/usr/share/miniconda
 GITHUB_WORKSPACE=/home/runner/work/cicd-template/cicd-template
 JAVA_HOME_11_X64=/usr/lib/jvm/temurin-11-jdk-amd64
 API_URL=https://api.github.com/repos/pfapi/cicd-template
-GITHUB_PATH=/home/runner/work/_temp/_runner_file_commands/add_path_d188dde2-b75f-46a1-97b8-21556128ecb8
+GITHUB_PATH=/home/runner/work/_temp/_runner_file_commands/add_path_e1f9b7fb-ca9b-4c79-9b01-3c77b5355b2f
 GITHUB_ACTION=__run_2
 JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64
-GITHUB_RUN_NUMBER=22
+GITHUB_RUN_NUMBER=28
 RUNNER_NAME=Hosted Agent
 GRADLE_HOME=/usr/share/gradle-7.5
 XDG_CONFIG_HOME=/home/runner/.config
@@ -31,28 +26,28 @@ PIPX_BIN_DIR=/opt/pipx_bin
 DEPLOYMENT_BASEPATH=/opt/runner
 GITHUB_ACTIONS=true
 ANDROID_NDK_LATEST_HOME=/usr/local/lib/android/sdk/ndk/25.0.8775105
-GITHUB_SHA=0d2edd28fe2353cafe5ef9a2ca1d8c01bcdf9b5d
+GITHUB_SHA=2f546bb4acc33f1f8ab8e6494058c0835dd8108f
 POWERSHELL_DISTRIBUTION_CHANNEL=GitHub-Actions-ubuntu20
 DOTNET_MULTILEVEL_LOOKUP=0
-GITHUB_REF=refs/pull/153/merge
+GITHUB_REF=refs/pull/159/merge
 RUNNER_OS=Linux
 GITHUB_REF_PROTECTED=false
 HOME=/home/runner
 GITHUB_API_URL=https://api.github.com
 LANG=C.UTF-8
-RUNNER_TRACKING_ID=github_915c5eed-a22e-4736-a187-de3605c487a7
+RUNNER_TRACKING_ID=github_9e64dc3a-c5a2-408e-9a69-4a450cf8f595
 STATS_KEEPALIVE=false
 RUNNER_ARCH=X64
 RUNNER_TEMP=/home/runner/work/_temp
 EDGEWEBDRIVER=/usr/local/share/edge_driver
-GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/set_env_d188dde2-b75f-46a1-97b8-21556128ecb8
+GITHUB_ENV=/home/runner/work/_temp/_runner_file_commands/set_env_e1f9b7fb-ca9b-4c79-9b01-3c77b5355b2f
 GITHUB_EVENT_PATH=/home/runner/work/_temp/_github_workflow/event.json
-INVOCATION_ID=dd9dbb16d9884ab8ad3a81461e0c8d7e
+INVOCATION_ID=5b607855b70d401babca214ce7f49d7b
 GITHUB_EVENT_NAME=pull_request
-GITHUB_RUN_ID=2808841467
+GITHUB_RUN_ID=2810626868
 JAVA_HOME_17_X64=/usr/lib/jvm/temurin-17-jdk-amd64
 ANDROID_NDK_HOME=/usr/local/lib/android/sdk/ndk/25.0.8775105
-GITHUB_STEP_SUMMARY=/home/runner/work/_temp/_runner_file_commands/step_summary_d188dde2-b75f-46a1-97b8-21556128ecb8
+GITHUB_STEP_SUMMARY=/home/runner/work/_temp/_runner_file_commands/step_summary_e1f9b7fb-ca9b-4c79-9b01-3c77b5355b2f
 HOMEBREW_NO_AUTO_UPDATE=1
 GITHUB_ACTOR=samswen
 NVM_DIR=/home/runner/.nvm
@@ -76,7 +71,7 @@ RUNNER_TOOL_CACHE=/opt/hostedtoolcache
 ImageVersion=20220729.1
 DOTNET_NOLOGO=1
 STATS_PT=20
-GITHUB_REF_NAME=153/merge
+GITHUB_REF_NAME=159/merge
 STATS_PFS=true
 GRAALVM_11_ROOT=/usr/local/graalvm/graalvm-ce-java11-22.2.0
 GITHUB_JOB=tests
@@ -88,7 +83,7 @@ CHROME_BIN=/usr/bin/google-chrome
 ANDROID_NDK_ROOT=/usr/local/lib/android/sdk/ndk/25.0.8775105
 GOROOT_1_18_X64=/opt/hostedtoolcache/go/1.18.4/x64
 GITHUB_RETENTION_DAYS=90
-JOURNAL_STREAM=8:22661
+JOURNAL_STREAM=8:22857
 RUNNER_WORKSPACE=/home/runner/work/cicd-template
 LEIN_HOME=/usr/local/lib/lein
 LEIN_JAR=/usr/local/lib/lein/self-installs/leiningen-2.9.8-standalone.jar
@@ -109,136 +104,86 @@ GOROOT_1_16_X64=/opt/hostedtoolcache/go/1.16.15/x64
 _=/usr/bin/env
 
 {
-  "token": "***",
-  "job": "tests",
-  "ref": "refs/pull/153/merge",
-  "sha": "0d2edd28fe2353cafe5ef9a2ca1d8c01bcdf9b5d",
-  "repository": "pfapi/cicd-template",
-  "repository_owner": "pfapi",
-  "repository_owner_id": "109823601",
-  "repositoryUrl": "git://github.com/pfapi/cicd-template.git",
-  "run_id": "2808841467",
-  "run_number": "22",
-  "retention_days": "90",
-  "run_attempt": "2",
-  "artifact_cache_size_limit": "10",
-  "repository_visibility": "public",
-  "repository_id": "520647722",
-  "actor_id": "24588196",
-  "actor": "samswen",
-  "triggering_actor": "pfapi",
-  "workflow": "tests",
-  "head_ref": "development",
-  "base_ref": "development",
-  "event_name": "pull_request",
-  "event": {
-    "action": "opened",
-    "number": 153,
-    "pull_request": {
-      "_links": {
-        "comments": {
-          "href": "https://api.github.com/repos/pfapi/cicd-template/issues/153/comments"
-        },
-        "commits": {
-          "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/153/commits"
-        },
-        "html": {
-          "href": "https://github.com/pfapi/cicd-template/pull/153"
-        },
-        "issue": {
-          "href": "https://api.github.com/repos/pfapi/cicd-template/issues/153"
-        },
-        "review_comment": {
-          "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/comments{/number}"
-        },
-        "review_comments": {
-          "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/153/comments"
-        },
-        "self": {
-          "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/153"
-        },
-        "statuses": {
-          "href": "https://api.github.com/repos/pfapi/cicd-template/statuses/2b06673b15cbdebdc89784fbeaa0942e0559ab1d"
-        }
-      },
-      "active_lock_reason": null,
-      "additions": 2,
-      "assignee": null,
-      "assignees": [],
-      "author_association": "NONE",
-      "auto_merge": null,
-      "base": {
+    "token": "***",
+    "job": "tests",
+    "ref": "refs/pull/159/merge",
+    "sha": "2f546bb4acc33f1f8ab8e6494058c0835dd8108f",
+    "repository": "pfapi/cicd-template",
+    "repository_owner": "pfapi",
+    "repository_owner_id": "109823601",
+    "repositoryUrl": "git://github.com/pfapi/cicd-template.git",
+    "run_id": "2810626868",
+    "run_number": "28",
+    "retention_days": "90",
+    "run_attempt": "2",
+    "artifact_cache_size_limit": "10",
+    "repository_visibility": "public",
+    "repository_id": "520647722",
+    "actor_id": "24588196",
+    "actor": "samswen",
+    "triggering_actor": "pfapi",
+    "workflow": "tests",
+    "head_ref": "development",
+    "base_ref": "development",
+    "event_name": "pull_request",
+    "event": {
+      "action": "opened",
+      "number": 159,
+      "pull_request": {
+        "_links": {
+          "comments": {
+            "href": "https://api.github.com/repos/pfapi/cicd-template/issues/159/comments"
+          },
+          "commits": {
+            "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/159/commits"
+          },
+          "html": {
+            "href": "https://github.com/pfapi/cicd-template/pull/159"
+          },
+          "issue": {
+            "href": "https://api.github.com/repos/pfapi/cicd-template/issues/159"
+          },
+          "review_comment": {
+            "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/comments{/number}"
+          },
+          "review_comments": {
+            "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/159/comments"
+          },
+          "self": {
+            "href": "https://api.github.com/repos/pfapi/cicd-template/pulls/159"
+          },
+        "events_url": "https://api.github.com/users/samswen/events{/privacy}",
+        "followers_url": "https://api.github.com/users/samswen/followers",
+        "following_url": "https://api.github.com/users/samswen/following{/other_user}",
+        "gists_url": "https://api.github.com/users/samswen/gists{/gist_id}",
         "gravatar_id": "",
-        "html_url": "https://github.com/pfapi",
-        "id": 109823601,
-        "login": "pfapi",
-        "node_id": "U_kgDOBovGcQ",
-        "organizations_url": "https://api.github.com/users/pfapi/orgs",
-        "received_events_url": "https://api.github.com/users/pfapi/received_events",
-        "repos_url": "https://api.github.com/users/pfapi/repos",
+        "html_url": "https://github.com/samswen",
+        "id": 24588196,
+        "login": "samswen",
+        "node_id": "MDQ6VXNlcjI0NTg4MTk2",
+        "organizations_url": "https://api.github.com/users/samswen/orgs",
+        "received_events_url": "https://api.github.com/users/samswen/received_events",
+        "repos_url": "https://api.github.com/users/samswen/repos",
         "site_admin": false,
-        "starred_url": "https://api.github.com/users/pfapi/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/pfapi/subscriptions",
+        "starred_url": "https://api.github.com/users/samswen/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/samswen/subscriptions",
         "type": "User",
-        "url": "https://api.github.com/users/pfapi"
-      },
-      "private": false,
-      "pulls_url": "https://api.github.com/repos/pfapi/cicd-template/pulls{/number}",
-      "pushed_at": "2022-08-06T12:05:31Z",
-      "releases_url": "https://api.github.com/repos/pfapi/cicd-template/releases{/id}",
-      "size": 473,
-      "ssh_url": "git@github.com:pfapi/cicd-template.git",
-      "stargazers_count": 0,
-      "stargazers_url": "https://api.github.com/repos/pfapi/cicd-template/stargazers",
-      "statuses_url": "https://api.github.com/repos/pfapi/cicd-template/statuses/{sha}",
-      "subscribers_url": "https://api.github.com/repos/pfapi/cicd-template/subscribers",
-      "subscription_url": "https://api.github.com/repos/pfapi/cicd-template/subscription",
-      "svn_url": "https://github.com/pfapi/cicd-template",
-      "tags_url": "https://api.github.com/repos/pfapi/cicd-template/tags",
-      "teams_url": "https://api.github.com/repos/pfapi/cicd-template/teams",
-      "topics": [],
-      "trees_url": "https://api.github.com/repos/pfapi/cicd-template/git/trees{/sha}",
-      "updated_at": "2022-08-06T09:10:41Z",
-      "url": "https://api.github.com/repos/pfapi/cicd-template",
-      "visibility": "public",
-      "watchers": 0,
-      "watchers_count": 0,
-      "web_commit_signoff_required": false
+        "url": "https://api.github.com/users/samswen"
+      }
     },
-    "sender": {
-      "avatar_url": "https://avatars.githubusercontent.com/u/24588196?v=4",
-      "events_url": "https://api.github.com/users/samswen/events{/privacy}",
-      "followers_url": "https://api.github.com/users/samswen/followers",
-      "following_url": "https://api.github.com/users/samswen/following{/other_user}",
-      "gists_url": "https://api.github.com/users/samswen/gists{/gist_id}",
-      "gravatar_id": "",
-      "html_url": "https://github.com/samswen",
-      "id": 24588196,
-      "login": "samswen",
-      "node_id": "MDQ6VXNlcjI0NTg4MTk2",
-      "organizations_url": "https://api.github.com/users/samswen/orgs",
-      "received_events_url": "https://api.github.com/users/samswen/received_events",
-      "repos_url": "https://api.github.com/users/samswen/repos",
-      "site_admin": false,
-      "starred_url": "https://api.github.com/users/samswen/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/samswen/subscriptions",
-      "type": "User",
-      "url": "https://api.github.com/users/samswen"
-    }
-  },
-  "server_url": "https://github.com",
-  "api_url": "https://api.github.com",
-  "graphql_url": "https://api.github.com/graphql",
-  "ref_name": "153/merge",
-  "ref_protected": false,
-  "ref_type": "branch",
-  "secret_source": "None",
-  "workspace": "/home/runner/work/cicd-template/cicd-template",
-  "action": "github_context_step",
-  "event_path": "/home/runner/work/_temp/_github_workflow/event.json",
-  "action_repository": "",
-  "action_ref": "",
-  "path": "/home/runner/work/_temp/_runner_file_commands/add_path_b677acd0-434a-4780-9adc-a2e9d1de8e0c",
-  "env": "/home/runner/work/_temp/_runner_file_commands/set_env_b677acd0-434a-4780-9adc-a2e9d1de8e0c",
-  "step_summary": "/home/runner/work/_temp/_runner_file_commands/step_summary_b677acd0-434a-4780-9adc-a2e9d1de8e0c"
-}
+    "server_url": "https://github.com",
+    "api_url": "https://api.github.com",
+    "graphql_url": "https://api.github.com/graphql",
+    "ref_name": "159/merge",
+    "ref_protected": false,
+    "ref_type": "branch",
+    "secret_source": "None",
+    "workspace": "/home/runner/work/cicd-template/cicd-template",
+    "action": "github_context_step",
+    "event_path": "/home/runner/work/_temp/_github_workflow/event.json",
+    "action_repository": "",
+    "action_ref": "",
+    "path": "/home/runner/work/_temp/_runner_file_commands/add_path_0b455637-08c6-4af9-be32-fac14a7a3782",
+    "env": "/home/runner/work/_temp/_runner_file_commands/set_env_0b455637-08c6-4af9-be32-fac14a7a3782",
+    "step_summary": "/home/runner/work/_temp/_runner_file_commands/step_summary_0b455637-08c6-4af9-be32-fac14a7a3782"
+  }
