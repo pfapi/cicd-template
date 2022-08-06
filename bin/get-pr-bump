@@ -2,7 +2,7 @@
 
 # - name: setup
 #   run: |
-#     echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+#     echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
 
 # - name: get pr bump
 #   run: |
@@ -39,4 +39,8 @@ if [[ "$TITLE" == to-release-* ]]; then
   fi
 fi
 
-echo "BUMP=$BUMP" >> $GITHUB_ENV
+if [ -z "$GITHUB_ENV" ]; then
+  echo $BUMP
+else
+  echo "BUMP=$BUMP" >> $GITHUB_ENV
+fi

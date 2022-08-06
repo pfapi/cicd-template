@@ -4,6 +4,11 @@ on:
   pull_request:
     branches:
       - development
+  pull_request_review:
+    branches:
+      - development
+    types:
+      - submitted
 
 jobs:
 
@@ -26,8 +31,17 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git config advice.detached head false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+          echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
+          echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
 
+      - name: Dump env
+        run: env
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+        
       - name: install dependencies
         run: npm install
 
@@ -37,7 +51,12 @@ jobs:
       - name: Run test
         run: npx lerna run test --stream
 
+      - name: Is collaborator (owner is a collaborator)
+        run: |
+          bin/is-collaborator
+
       - name: commit and merge into GITHUB_BASE_REF
+        if: env.IS_COLLABORATOR == 'true'
         run: |
           git add .
           git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
@@ -46,11 +65,13 @@ jobs:
           git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
 
       - name: version & publish
+        if: env.IS_COLLABORATOR == 'true'
         run: |
           npx lerna version --exact --conventional-commits --conventional-prerelease --preid beta --yes
           npx lerna publish from-git --yes --dist-tag beta
 
       - name: finish the commit
+        if: env.IS_COLLABORATOR == 'true'
         run: |
           git add .
           git commit -m "final commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
