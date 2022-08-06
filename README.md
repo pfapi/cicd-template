@@ -10,8 +10,8 @@ Three simple node projects:
 
 Two github actions secrets: 
 
-1) GH_TOKEN: github personal access token
-2) NPM_TOKEN: npm access token
+1) GH_TOKEN: github personal access token - starts with ghp_
+2) NPM_TOKEN: npm access token - starts with npm_
 
 ## Branches
 
