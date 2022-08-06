@@ -8,10 +8,10 @@ Three simple node projects:
 
 ## Requirements
 
-    Two github actions secrets: 
+Two github actions secrets: 
 
-    1) GH_TOKEN: github personal access token
-    2) NPM_TOKEN: npm access token
+1) GH_TOKEN: github personal access token
+2) NPM_TOKEN: npm access token
 
 ## Branches
 
