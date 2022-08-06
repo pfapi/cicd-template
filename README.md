@@ -1,11 +1,17 @@
 # cicd-template
 
-A template monorepo repo for ci/cd using lerna and github actions. The purpose of this project is to find the common patterns and non-trivia nuaunces and to provide a smooth ci/cd experience template for monorepo project with lerna running on github.
+A template monorepo repo for ci/cd using lerna and github actions. The purpose of this project is to find the common patterns and non-trivial nuances for monorepo project with lerna running on github and to provide a smooth ci/cd experience template.
 
 Three simple node projects:
 
 <img alt="projects graph" src="https://github.com/pfapi/cicd-test/blob/development/images/graph.png" />
 
+## Requirements
+
+Two github actions secrets: 
+
+1) GH_TOKEN: github personal access token
+2) NPM_TOKEN: npm access token
 
 ## Branches
 
@@ -19,9 +25,9 @@ Three simple node projects:
 
     a) tests workflow runs automatically and will merge the code if the tests pass and the requestor is a collaborator.
 
-    b) github collaborator APIs query result shows that owner is also a collaborator.
+    FYI: github collaborator APIs query result shows that owner is also a collaborator.
 
-    c) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
+    b) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
 2) when a pull request from the development branch to the main is submitted
 
