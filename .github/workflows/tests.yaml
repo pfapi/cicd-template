@@ -41,7 +41,9 @@ jobs:
         run: echo '${{ toJSON(github) }}'
       - name: Dump job context
         run: echo '${{ toJSON(job) }}'
-        
+      - name: Dump note.txt
+        run: [ -f ./note.txt ] && cat ./note.txt || echo "./note.txt not exists"
+
       - name: install dependencies
         run: npm install
 
