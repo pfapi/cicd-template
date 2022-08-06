@@ -25,9 +25,9 @@ Two github actions secrets:
 
     a) tests workflow runs automatically and will merge the code if the tests pass and the requestor is a collaborator.
 
-    b) github collaborator APIs query result shows that owner is also a collaborator.
+    FYI: github collaborator APIs query result shows that owner is also a collaborator.
 
-    c) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
+    b) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
 2) when a pull request from the development branch to the main is submitted
 
