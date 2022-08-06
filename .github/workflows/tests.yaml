@@ -31,7 +31,7 @@ jobs:
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git config advice.detached head false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+          echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
 
       - name: Dump env
@@ -52,7 +52,8 @@ jobs:
         run: npx lerna run test --stream
 
       - name: Is collaborator (owner is a collaborator)
-        run: bin/is-collaborator
+        run: |
+          bin/is-collaborator
 
       - name: commit and merge into GITHUB_BASE_REF
         if: env.IS_COLLABORATOR == 'true'
