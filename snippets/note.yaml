@@ -6,7 +6,7 @@
     - name: create release
       uses: actions/create-release@v1
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ github.token }}
       with:
         tag_name: v${{ env.CURRENT_VERSION }}
         release_name: cicd-test-v${{ env.CURRENT_VERSION }}
@@ -23,7 +23,7 @@
       - name: 
         uses: "pascalgn/automerge-action@v0.15.3"
         env:
-          GH_TOKEN: "${{ secrets.GH_TOKEN }}"
+          GH_TOKEN: "${{ github.token }}"
           MERGE_REMOVE_LABELS: "automerge"
 
       - name: version and publish
@@ -36,7 +36,7 @@
             npx lerna publish from-git --yes --dist-tag beta 
           fi
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
 
       # - name: setup tmp branch
       #   run: |
