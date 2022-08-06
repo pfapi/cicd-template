@@ -6,6 +6,12 @@ Three simple node projects:
 
 <img alt="projects graph" src="https://github.com/pfapi/cicd-test/blob/development/images/graph.png" />
 
+## Requirements
+
+    Two github actions secrets: 
+
+    1) GH_TOKEN: github personal access token
+    2) NPM_TOKEN: npm access token
 
 ## Branches
 
