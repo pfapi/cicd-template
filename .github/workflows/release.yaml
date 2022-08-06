@@ -22,7 +22,7 @@ jobs:
     steps:
 
       - name: only allow pull request from development
-        if: github.head_ref != 'development'
+        if: github.head_ref != '' && github.head_ref != 'development'
         run: |
           echo "pull request from ${{ github.head_ref }} is not allowed"
           exit 1
