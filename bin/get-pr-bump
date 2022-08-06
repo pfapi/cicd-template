@@ -39,4 +39,8 @@ if [[ "$TITLE" == to-release-* ]]; then
   fi
 fi
 
-echo "BUMP=$BUMP" >> $GITHUB_ENV
+if [ -z "$GITHUB_ENV" ]; then
+  echo $BUMP
+else
+  echo "BUMP=$BUMP" >> $GITHUB_ENV
+fi
