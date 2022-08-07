@@ -17,35 +17,34 @@ Two github actions secrets:
 
 * main - keeps the latest released and production code, only accept pull requests from the development.
 * development - keeps the latest development code, only accept pull requests from feature branches.
-* feature branches - where actual development works happen
+* feature branches - where development works happen
+* branch (development) of a forked repo - where development works happen
 
 ## Workflows
 
-1) when a pull request from a feature branch to the development is submitted
+1) When a pull request from a feature branch to the development is submitted
 
-    a) tests workflow runs automatically and will merge the code.
+    a) tests workflow runs automatically. if the tests pass, it will merge the code.
 
     b) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
-2) when a forked pull request from a forked repo to the development is submitted
+2) When a forked pull request of a forked repo to the development is submitted
 
-    a) the forked pull request will wait for approval depending on settings
+    a) the forked pull request will wait for approval or runs automatically, depending on settings.
 
-    b) after that, tests workflow runs automatically but will not merge the code
+    b) after that, tests workflow runs but will not merge the code.
 
-    c) owner of the repo will manually merge the code and manually run the action tests.
+    c) to get major.minor.patch-beta.x versioned npm packages, owner needs to manually merge and start the action tests.
 
-    d) tests workflow publishes major.minor.patch-beta.x versioned npm packages.
+3) When a pull request from the development branch to the main is submitted (release pull request)
 
-3) when a pull request from the development branch to the main is submitted
-
-    a) release workflow runs automatically and will merge the code if the tests pass
+    a) release workflow runs automatically and will merge the code if the tests pass.
 
     b) release workflow publishes major.minor.patch versioned npm packages.
 
-    c) release workflow also generate github release tagged with the version
+    c) release workflow also generate github release tagged with the version.
 
-4) creating to-release issue
+4) Creating to-release issue
 
     a) when an issue title starts with to-release created, the to-release workflow is triggered.
 
@@ -53,7 +52,7 @@ Two github actions secrets:
 
     c) to-release workflow closes the issue and create a pull request with the same title.
 
-5) title for to-release issue and pull request from the development to the main
+5) Title for to-release issue and the release pull request
 
     a) if it is not started with to-release or exact as to-release, the default bump option for lerna version is patch.
 
