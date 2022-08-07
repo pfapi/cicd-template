@@ -5,9 +5,11 @@
 
 set -e
 
+git branch temporary-work
+git switch temporary-work
+
 git add .
 git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
-git branch temporary-work
 
 git checkout $GITHUB_BASE_REF
 git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
