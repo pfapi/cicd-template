@@ -40,7 +40,7 @@ jobs:
       - name: Run test
         run: npx lerna run test --stream
 
-      - name: not forked pull request merge
+      - name: pull request merge
         run: .github/bin/pr-merge-simple
 
       - name: version & publish
