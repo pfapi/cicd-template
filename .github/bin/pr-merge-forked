@@ -19,7 +19,7 @@ git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
 git remote remove origin
 git remote add origin $BASE_URL
 
-git pull
+git pull origin development
 
 git checkout development
 
