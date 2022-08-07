@@ -4,12 +4,11 @@
 #   run: |
 #     echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
 #     echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
+#     echo "BRANCH=development" >> $GITHUB_ENV
 #
 # - name: turn off protection
 #   if: ${{ github.ref_protected == 'true' }}
-#   run: |
-#     echo "BRANCH=development" >> $GITHUB_ENV
-#     bin/disable-protection
+#   run: .github/bin/disable-protection
 
 [ -z "$GITHUB_ENV" ] || . $GITHUB_ENV
 

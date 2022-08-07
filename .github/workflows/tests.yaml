@@ -4,11 +4,7 @@ on:
   pull_request:
     branches:
       - development
-  pull_request_review:
-    branches:
-      - development
-    types:
-      - submitted
+  workflow_dispatch:
 
 jobs:
 
@@ -32,9 +28,10 @@ jobs:
           git config advice.detachedHead false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           [ -z "${{ secrets.GH_TOKEN }}" ] && echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV || echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
-          echo "BASE_URL=https://github.com/${{ github.repository }}" >> $GITHUB_ENV
+          echo "BASE_URL=https://github.com/${{ github.repository }}.git" >> $GITHUB_ENV
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
-          echo "IS_FORK=${{ github.pull_request.head.fork }}" >> $GITHUB_ENV
+          echo "IS_FORK=${{ github.event.pull_request.head.repo.fork }}" >> $GITHUB_ENV
+          .github/bin/is-collaborator
 
       - name: install dependencies
         run: npm install
@@ -45,35 +42,13 @@ jobs:
       - name: Run test
         run: npx lerna run test --stream
 
-      - name: Is collaborator (owner is a collaborator)
-        run: |
-          bin/is-collaborator
-
       - name: not forked pull request merge
         if: env.IS_COLLABORATOR == 'true' && env.IS_FORK != 'true'
-        run: |
-          git add .
-          git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
-          git branch temporary-work
-          git checkout $GITHUB_BASE_REF
-          git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
+        run: .github/bin/pr-merge-simple
 
       - name: forked pull request merge
         if: env.IS_COLLABORATOR == 'true' && env.IS_FORK == 'true'
-        run: |
-          git add .
-          git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
-          git branch temporary-work
-          git remote add upstream $BASE_URL
-          git pull upstream development
-          git checkout upstream/development
-          git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
-          git push upstream development
-          git remote remove upstream
-          git remote remove origin
-          git remote add origin $BASE_URL
-          git pull
-          git checkout development
+        run: .github/bin/pr-merge-forked
 
       - name: version & publish
         if: env.IS_COLLABORATOR == 'true'
@@ -83,7 +58,4 @@ jobs:
 
       - name: finish the commit
         if: env.IS_COLLABORATOR == 'true'
-        run: |
-          git add .
-          git commit -m "final commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
-          git push || true
+        run: .github/bin/finish-commit
