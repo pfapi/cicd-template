@@ -23,6 +23,6 @@ git pull origin development
 
 git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
 
-git push --set-upstream origin development
+git push --set-upstream origin development -ff
 
 git checkout development
