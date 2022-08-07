@@ -10,9 +10,7 @@ if [ -z "$BASE_URL" ]; then
   exit 1
 fi
 
-cat ~/.git-credentials
-
-# need to update ~/.git-credentials
+# need ~/.git-credentials
 echo "https://$GITHUB_REPOSITORY_OWNER:$GH_TOKEN@github.com" > ~/.git-credentials
 
 git branch temporary-work
