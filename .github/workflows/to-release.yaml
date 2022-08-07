@@ -37,9 +37,9 @@ jobs:
         if: env.OK == 'true' 
         run: |
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
-          [ -z "${{ secrets.GH_TOKEN }}" ] && echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV || echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
       - name: sync changed files
         if: env.OK == 'true' 
