@@ -7,7 +7,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 git checkout development
 git pull
 $SCRIPT_DIR/save-files
-cp SCRIPT_DIR/apply-files /tmp
+cp $SCRIPT_DIR/apply-files /tmp
 git checkout main
 git pull
 /tmp/apply-files
