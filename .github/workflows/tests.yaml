@@ -50,7 +50,7 @@ jobs:
           bin/is-collaborator
 
       - name: not forked pull request merge
-        if: env.IS_COLLABORATOR == 'true' && IS_FORK != 'true'
+        if: env.IS_COLLABORATOR == 'true' && env.IS_FORK != 'true'
         run: |
           git add .
           git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
@@ -59,7 +59,7 @@ jobs:
           git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
 
       - name: forked pull request merge
-        if: env.IS_COLLABORATOR == 'true' && IS_FORK == 'true'
+        if: env.IS_COLLABORATOR == 'true' && env.IS_FORK == 'true'
         run: |
           git add .
           git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
