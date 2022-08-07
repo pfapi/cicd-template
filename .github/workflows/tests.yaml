@@ -23,13 +23,13 @@ jobs:
 
       - name: setup
         run: |
-          GH_TOKEN=${{ github.token }}
+          GH_TOKEN=${{ secrets.GH_TOKEN }}
           echo "GH_TOKEN=$GH_TOKEN" >> $GITHUB_ENV
-          git config user.name "$GITHUB_REPOSITORY_OWNER"
-          git config user.email "$GITHUB_REPOSITORY_OWNER@users.noreply.github.com"
-          git config github.user "$GITHUB_REPOSITORY_OWNER"
-          git config github.token "$GH_TOKEN"
-          git config advice.detachedHead false
+          git config --global user.name "$GITHUB_REPOSITORY_OWNER"
+          git config --global user.email "$GITHUB_REPOSITORY_OWNER@users.noreply.github.com"
+          git config --global github.user "$GITHUB_REPOSITORY_OWNER"
+          git config --global github.token "$GH_TOKEN"
+          git config --global advice.detachedHead false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           echo "BASE_URL=https://$GITHUB_REPOSITORY_OWNER:$GH_TOKEN@github.com/${{ github.repository }}.git" >> $GITHUB_ENV
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
