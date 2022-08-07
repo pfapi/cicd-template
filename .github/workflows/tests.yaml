@@ -31,7 +31,7 @@ jobs:
           echo "BASE_URL=https://github.com/${{ github.repository }}.git" >> $GITHUB_ENV
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
           echo "IS_FORK=${{ github.event.pull_request.head.repo.fork }}" >> $GITHUB_ENV
-          bin/is-collaborator
+          .github/bin/is-collaborator
 
       - name: install dependencies
         run: npm install
@@ -44,11 +44,11 @@ jobs:
 
       - name: not forked pull request merge
         if: env.IS_COLLABORATOR == 'true' && env.IS_FORK != 'true'
-        run: bin/pr-merge-simple
+        run: .github/bin/pr-merge-simple
 
       - name: forked pull request merge
         if: env.IS_COLLABORATOR == 'true' && env.IS_FORK == 'true'
-        run: bin/pr-merge-forked
+        run: .github/bin/pr-merge-forked
 
       - name: version & publish
         if: env.IS_COLLABORATOR == 'true'
@@ -58,4 +58,4 @@ jobs:
 
       - name: finish the commit
         if: env.IS_COLLABORATOR == 'true'
-        run: bin/finish-commit
+        run: .github/bin/finish-commit

@@ -6,8 +6,7 @@
 #     echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
 
 # - name: is collaborator
-#   run: |
-#     bin/is-collaborator
+#   run: .github/bin/is-collaborator
 
 [ -z "$GITHUB_ENV" ] || . $GITHUB_ENV
 
