@@ -29,7 +29,15 @@ Two github actions secrets:
 
     b) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
-2) when a pull request from the development branch to the main is submitted
+2) when a forked pull request from forked repo to the development is submitted (still working it)
+
+    a) the forked pull request will wait for verify
+
+    a) after verify, tests workflow runs automatically and will merge the code if the tests pass and the requestor is a collaborator.
+
+    c) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
+
+3) when a pull request from the development branch to the main is submitted
 
     a) release workflow runs automatically and will merge the code if the tests pass
 
@@ -37,7 +45,7 @@ Two github actions secrets:
 
     c) release workflow also generate github release tagged with the version
 
-3) creating to-release issue
+4) creating to-release issue
 
     a) when an issue title starts with to-release created, the to-release workflow is triggered.
 
@@ -45,7 +53,7 @@ Two github actions secrets:
 
     c) to-release workflow closes the issue and create a pull request with the same title.
 
-4) title for to-release issue and pull request from the development to the main
+5) title for to-release issue and pull request from the development to the main
 
     a) if it is not started with to-release or exact as to-release, the default bump option for lerna version is patch.
 
