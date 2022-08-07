@@ -32,6 +32,7 @@ jobs:
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
           echo "IS_FORK=${{ github.event.pull_request.head.repo.fork }}" >> $GITHUB_ENV
           .github/bin/is-collaborator
+          git -v
 
       - name: install dependencies
         run: npm install
