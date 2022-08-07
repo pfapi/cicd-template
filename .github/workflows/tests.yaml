@@ -1,14 +1,10 @@
 name: tests
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - development
-  pull_request_review:
-    branches:
-      - development
-    types:
-      - submitted
 
 jobs:
 
@@ -36,12 +32,6 @@ jobs:
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
           echo "IS_FORK=${{ github.event.pull_request.head.repo.fork }}" >> $GITHUB_ENV
           bin/is-collaborator
-
-      - name: Dump GitHub context
-        run: |
-          echo "IS_COLLABORATOR=$IS_COLLABORATOR"
-          echo "IS_FORK=$IS_FORK"
-          echo "${{ toJSON(github) }}"
 
       - name: install dependencies
         run: npm install
