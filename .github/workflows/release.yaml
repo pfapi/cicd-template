@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git config advice.detached head false
+          git config advice.detachedHead false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
           echo "ISSUE_URL=${{ github.api_url }}/repos/${{ github.repository }}/issues/${{ github.event.number }}" >> $GITHUB_ENV
