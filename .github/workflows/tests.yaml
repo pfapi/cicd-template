@@ -29,19 +29,13 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git config advice.detached head false
+          git config advice.detachedHead false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           [ -z "${{ secrets.GH_TOKEN }}" ] && echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV || echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+          echo "BASE_URL=https://github.com/${{ github.repository }}" >> $GITHUB_ENV
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
+          echo "IS_FORK=${{ github.pull_request.head.fork }}" >> $GITHUB_ENV
 
-      - name: Dump env
-        run: env
-      - name: Dump GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
-      - name: Dump job context
-        run: echo '${{ toJSON(job) }}'
-        
       - name: install dependencies
         run: npm install
 
@@ -55,14 +49,31 @@ jobs:
         run: |
           bin/is-collaborator
 
-      - name: commit and merge into GITHUB_BASE_REF
-        if: env.IS_COLLABORATOR == 'true'
+      - name: not forked pull request merge
+        if: env.IS_COLLABORATOR == 'true' && env.IS_FORK != 'true'
         run: |
           git add .
           git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
           git branch temporary-work
           git checkout $GITHUB_BASE_REF
           git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
+
+      - name: forked pull request merge
+        if: env.IS_COLLABORATOR == 'true' && env.IS_FORK == 'true'
+        run: |
+          git add .
+          git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
+          git branch temporary-work
+          git remote add upstream $BASE_URL
+          git pull upstream development
+          git checkout upstream/development
+          git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
+          git push upstream development
+          git remote remove upstream
+          git remote remove origin
+          git remote add origin $BASE_URL
+          git pull
+          git checkout development
 
       - name: version & publish
         if: env.IS_COLLABORATOR == 'true'
