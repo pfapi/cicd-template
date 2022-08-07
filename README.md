@@ -23,19 +23,19 @@ Two github actions secrets:
 
 1) when a pull request from a feature branch to the development is submitted
 
-    a) tests workflow runs automatically and will merge the code if the tests pass and the requestor is a collaborator.
-
-    FYI: github collaborator APIs query result shows that owner is also a collaborator.
+    a) tests workflow runs automatically and will merge the code.
 
     b) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
-2) when a forked pull request from forked repo to the development is submitted (still working it)
+2) when a forked pull request from a forked repo to the development is submitted
 
-    a) the forked pull request will wait for verify
+    a) the forked pull request will wait for approval depending on settings
 
-    a) after verify, tests workflow runs automatically and will merge the code if the tests pass and the requestor is a collaborator.
+    b) after that, tests workflow runs automatically but will not merge the code
 
-    c) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
+    c) owner of the repo will manually merge the code and manually run the action tests.
+
+    d) tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
 3) when a pull request from the development branch to the main is submitted
 

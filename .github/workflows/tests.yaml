@@ -40,12 +40,15 @@ jobs:
         run: npx lerna run test --stream
 
       - name: pull request merge
+        if: env.GH_TOKEN != ''
         run: .github/bin/pr-merge-simple
 
       - name: version & publish
+        if: env.GH_TOKEN != ''
         run: |
           npx lerna version --exact --conventional-commits --conventional-prerelease --preid beta --yes
           npx lerna publish from-git --yes --dist-tag beta
 
       - name: finish the commit
+        if: env.GH_TOKEN != ''
         run: .github/bin/finish-commit
