@@ -27,7 +27,8 @@ jobs:
           git config user.email "$GITHUB_REPOSITORY_OWNER@users.noreply.github.com"
           git config advice.detachedHead false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-          [ -z "${{ secrets.GH_TOKEN }}" ] && echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV || echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
+          [ -z "${{ secrets.GH_TOKEN }}" ] && GH_TOKEN=${{ github.token }} || GH_TOKEN=${{ secrets.GH_TOKEN }}
+          echo "GH_TOKEN=$GH_TOKEN" >> $GITHUB_ENV
           echo "BASE_URL=https://$GITHUB_REPOSITORY_OWNER:$GH_TOKEN@github.com/${{ github.repository }}.git" >> $GITHUB_ENV
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
           echo "IS_FORK=${{ github.event.pull_request.head.repo.fork }}" >> $GITHUB_ENV
