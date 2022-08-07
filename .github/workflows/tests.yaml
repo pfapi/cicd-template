@@ -21,6 +21,8 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
+      - run: git branch
+
       - name: setup
         run: |
           git config --global user.name "$GITHUB_REPOSITORY_OWNER"
