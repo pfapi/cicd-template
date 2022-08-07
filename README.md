@@ -29,11 +29,11 @@ Two github actions secrets:
 
     b) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
-2) when a forked pull request from forked repo to the development is submitted
+2) when a forked pull request from forked repo to the development is submitted (still working it)
 
-    a) the forked pull request will wait for approval
+    a) the forked pull request will wait for verify
 
-    a) after approval, tests workflow runs automatically and will merge the code if the tests pass and the requestor is a collaborator.
+    a) after verify, tests workflow runs automatically and will merge the code if the tests pass and the requestor is a collaborator.
 
     c) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
