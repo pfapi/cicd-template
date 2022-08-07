@@ -4,8 +4,8 @@ feature-a
 feature-b
 feature-c
 feature-d
-
 feature-e
+
 ##################################################
 from iamsamwen
 feature-1
@@ -19,3 +19,7 @@ feature-7
 again
 feature-8
 again 2
+
+##################################################
+from samswen
+feature-A
