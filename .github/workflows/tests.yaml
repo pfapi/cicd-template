@@ -61,7 +61,7 @@ jobs:
           git pull upstream development
           git checkout upstream/development
           git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
-          git push upstream development
+          git push upstream development -ff
           git remote remove upstream
           git remote remove origin
           git remote add origin $BASE_URL
