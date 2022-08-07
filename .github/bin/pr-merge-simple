@@ -5,7 +5,7 @@
 
 set -e
 
-branch=$(git branch | grep '^*' | grep "$GITHUB_BASE_REF")
+branch=$(git branch | grep "^*" | grep "$GITHUB_BASE_REF")
 
 if [ -z "$branch" ]; then
     git branch temporary-work
