@@ -13,3 +13,5 @@ git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
 
 git checkout $GITHUB_BASE_REF
 git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
+
+git push
