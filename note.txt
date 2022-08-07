@@ -3,3 +3,4 @@ from samswen
 feature-a
 feature-b
 feature-c
+feature-d
