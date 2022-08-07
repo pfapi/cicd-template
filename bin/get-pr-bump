@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# get BUMP from pull request title
+
 # - name: setup
 #   run: |
 #     echo "GH_TOKEN=${{ github.token }}" >> $GITHUB_ENV
