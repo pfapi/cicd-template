@@ -58,7 +58,4 @@ jobs:
 
       - name: finish the commit
         if: env.IS_COLLABORATOR == 'true'
-        run: |
-          git add .
-          git commit -m "final commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
-          git push || true
+        run: bin/finish-commit
