@@ -51,11 +51,52 @@ pulls
 GITHUB_REF_NAME=20/merge
 GITHUB_BASE_REF=development
 
+forked pull 
+
+github.repository = pfapi/cicd-template
 github.pull_request.base.repo.full_name = pfapi/cicd-template
 
 github.pull_request.head.repo.full_name = samswen/cicd-template
 
 github.pull_request.head.fork = true
 github.pull_request.head.default_branch = development
+
+github.head_ref "feature-a"
+github.base_ref "development"
+
 github.pull_request.head.clone_url = https://github.com/samswen/cicd-template.git
+
+BASE_URL=https://github.com/${{ github.repository }}
+
+git config advice.detached head false
+git config advice.detachedHead false
+git clone https://github.com/samswen/cicd-template.git
+cd cicd-template/
+git checkout --detach
+
+git add .
+git commit -m "test"
+
+git branch temporary-work
+
+git switch temporary-work
+
+git remote add upstream git@github.com:pfapi/cicd-template.git
+
+git pull upstream development
+
+git checkout upstream/development
+
+git merge temporary-work -m "merge"
+
+# git push upstream development -ff
+git push upstream development
+
+git remote remove upstream
+git remote remove origin
+git remote add origin git@github.com:pfapi/cicd-template.git
+
+git fetch
+git pull origin development
+git checkout development
 
