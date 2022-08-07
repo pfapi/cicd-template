@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# commit and merge into GITHUB_BASE_REF
 # used by release
 
 set -e
