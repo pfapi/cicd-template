@@ -12,6 +12,8 @@ jobs:
 
     timeout-minutes: 15
 
+    if: secrets.GH_TOKEN != ''
+    
     runs-on: ubuntu-latest
 
     steps:
