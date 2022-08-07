@@ -51,10 +51,10 @@ jobs:
         run: npx lerna run test --stream
 
       - name: commit and merge
-        run: bin/commit-merge
+        run: .github/bin/commit-merge
 
       - name: get BUMP from pull request title
-        run: bin/get-pr-bump
+        run: .github/bin/get-pr-bump
 
       - name: version & publish
         run: |
@@ -62,4 +62,4 @@ jobs:
           npx lerna publish from-git --yes --dist-tag latest
 
       - name: update lerna.json version to development
-        run: bin/update-dev
+        run: .github/bin/update-dev

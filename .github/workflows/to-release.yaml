@@ -43,15 +43,15 @@ jobs:
 
       - name: sync changed files
         if: env.OK == 'true' 
-        run: bin/sync-files
+        run: .github/bin/sync-files
 
 
       - name: create pull request
         if: env.OK == 'true' 
         run: |
           git checkout development
-          bin/create-pr
+          .github/bin/create-pr
 
       - name: close issue
         if: env.OK == 'true' && github.event_name == 'issues'
-        run: bin/close-issue
+        run: .github/bin/close-issue
