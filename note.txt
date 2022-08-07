@@ -17,3 +17,4 @@ feature-6
 hello
 feature-7
 again
+feature-8
