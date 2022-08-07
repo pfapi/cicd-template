@@ -16,6 +16,14 @@ jobs:
 
     steps:
 
+      - uses: trstringer/manual-approval@v1
+        if: secrets.GH_TOKEN == '' 
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: $GITHUB_REPOSITORY_OWNER
+          minimum-approvals: 1
+          issue-title: "Pull Request without TOKEN"
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
