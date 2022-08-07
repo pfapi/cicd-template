@@ -4,10 +4,12 @@
 # used by test
 
 set -e
+set -x
 
 branch=$(git branch | grep "^*" | grep "$GITHUB_BASE_REF")
 
 if [ -z "$branch" ]; then
+
     git branch temporary-work
     git switch temporary-work
 
@@ -16,6 +18,7 @@ if [ -z "$branch" ]; then
 
     git checkout $GITHUB_BASE_REF
     git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
+    
 fi
 
 git push
