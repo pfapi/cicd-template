@@ -23,16 +23,16 @@ jobs:
 
       - name: only allow pull request from development
         if: github.head_ref != '' && github.head_ref != 'development'
-        run: |
-          echo "pull request from ${{ github.head_ref }} is not allowed"
-          exit 1
+        run: echo "OK=false" >> $GITHUB_ENV
 
       - name: Checkout
+        if: env.OK != 'false'
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
       - name: setup
+        if: env.OK != 'false'
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
@@ -42,24 +42,31 @@ jobs:
           echo "ISSUE_URL=${{ github.api_url }}/repos/${{ github.repository }}/issues/${{ github.event.number }}" >> $GITHUB_ENV
 
       - name: install dependencies
+        if: env.OK != 'false'
         run: npm install
 
       - name: lerna bootstrap
+        if: env.OK != 'false'
         run: npx lerna bootstrap
 
       - name: Run test
+        if: env.OK != 'false'
         run: npx lerna run test --stream
 
       - name: commit and merge
+        if: env.OK != 'false'
         run: .github/bin/commit-merge
 
       - name: get BUMP from pull request title
+        if: env.OK != 'false'
         run: .github/bin/get-pr-bump
 
       - name: version & publish
+        if: env.OK != 'false'
         run: |
           npx lerna version $BUMP --exact --conventional-commits --conventional-graduate --create-release=github --yes
           npx lerna publish from-git --yes --dist-tag latest
 
       - name: update lerna.json version to development
+        if: env.OK != 'false'
         run: .github/bin/update-dev
