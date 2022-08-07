@@ -68,18 +68,16 @@ github.pull_request.head.clone_url = https://github.com/samswen/cicd-template.gi
 
 BASE_URL=https://github.com/${{ github.repository }}
 
-git config advice.detached head false
-git config advice.detachedHead false
 git clone https://github.com/samswen/cicd-template.git
 cd cicd-template/
+
+git config advice.detachedHead false
 git checkout --detach
 
 git add .
 git commit -m "test"
 
 git branch temporary-work
-
-git switch temporary-work
 
 git remote add upstream git@github.com:pfapi/cicd-template.git
 

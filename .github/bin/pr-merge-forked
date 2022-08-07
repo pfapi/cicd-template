@@ -10,21 +10,18 @@ if [ -z "$BASE_URL" ]; then
   exit 1
 fi
 
+git branch temporary-work
+git switch temporary-work
+
 git add .
 git commit -m "commit $GITHUB_REF_NAME by $GITHUB_JOB" || true
-git branch temporary-work
 
-git remote add upstream $BASE_URL
-git pull upstream development
-git checkout upstream/development
-
-git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
-
-git push upstream development
-
-git remote remove upstream
 git remote remove origin
 git remote add origin $BASE_URL
 
 git pull
 git checkout development
+
+git merge temporary-work -m "merge $GITHUB_REF_NAME by $GITHUB_JOB" || true
+
+git push --set-upstream origin development
