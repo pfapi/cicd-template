@@ -21,8 +21,6 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
-      - run: git branch
-
       - name: setup
         run: |
           git config --global user.name "$GITHUB_REPOSITORY_OWNER"
@@ -48,7 +46,7 @@ jobs:
       - name: version & publish
         if: env.GH_TOKEN != ''
         run: |
-          npx lerna version --exact --conventional-commits --conventional-prerelease --preid beta --yes
+          npx lerna version --exact --no-private --conventional-commits --conventional-prerelease --preid beta --yes
           npx lerna publish from-git --yes --dist-tag beta
 
       - name: finish the commit

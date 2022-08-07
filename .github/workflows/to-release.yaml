@@ -1,9 +1,9 @@
 name: to release
 
 on:
+  workflow_dispatch:
   issues:
     types: [ opened ]
-  workflow_dispatch:
   
 jobs:
 
