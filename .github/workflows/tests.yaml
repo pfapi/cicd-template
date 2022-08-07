@@ -27,7 +27,6 @@ jobs:
           git config --global user.email "$GITHUB_REPOSITORY_OWNER@users.noreply.github.com"
           git config --global advice.detachedHead false
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-          echo "BASE_URL=https://$GITHUB_REPOSITORY_OWNER:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git" >> $GITHUB_ENV
           echo "API_URL=${{ github.api_url }}/repos/${{ github.repository }}" >> $GITHUB_ENV
           echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
 
