@@ -1,6 +1,6 @@
 # cicd-template
 
-A template monorepo repo for ci/cd using lerna and github actions. The purpose of this project is to find the common patterns and non-trivial nuances for monorepo project with lerna running on github and to provide a smooth ci/cd experience template.
+It is a template monorepo repo for ci/cd using lerna and github actions. The purpose is to find the common patterns and non-trivial nuances and to provide a smooth ci/cd experience template.
 
 Three simple node projects:
 
@@ -16,9 +16,9 @@ Two github actions secrets:
 ## Branches
 
 * main - keeps the latest released and production code, only accept pull requests from the development.
-* development - keeps the latest development code, only accept pull requests from feature branches.
+* development - keeps the latest development code, accept pull requests from feature branches and forked repo.
 * feature branches - where development works happen
-* branch (development) of a forked repo - where development works happen
+* branch of a forked repo - where development works happen
 
 ## Workflows
 
@@ -28,13 +28,13 @@ Two github actions secrets:
 
     b) after merging the code, tests workflow publishes major.minor.patch-beta.x versioned npm packages.
 
-2) When a forked pull request of a forked repo to the development is submitted
+2) When a pull request of a forked repo to the development is submitted
 
     a) the forked pull request will wait for approval or runs automatically, depending on settings.
 
     b) after that, tests workflow runs but will not merge the code.
 
-    c) to get major.minor.patch-beta.x versioned npm packages, owner needs to manually merge and start the action tests.
+    c) to get major.minor.patch-beta.x versioned npm packages, owner needs to manually merge and start the tests workflow.
 
 3) When a pull request from the development branch to the main is submitted (release pull request)
 
@@ -44,7 +44,7 @@ Two github actions secrets:
 
     c) release workflow also generate github release tagged with the version.
 
-4) Creating to-release issue
+4) to-release workflow
 
     a) when an issue title starts with to-release created, the to-release workflow is triggered.
 
