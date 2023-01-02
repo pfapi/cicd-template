@@ -8,7 +8,7 @@
     "gen-package-locks": "lerna run --parallel gen-package-lock"
   },
   "devDependencies": {
-    "lerna": "^5.3.0"
+    "lerna": "^6.3.0"
   },
   "dependencies": {
     "nx": "^14.5.2"
